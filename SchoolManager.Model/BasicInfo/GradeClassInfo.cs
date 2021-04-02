@@ -28,6 +28,7 @@ namespace SchoolManager.Model.BasicInfo
         [Display(Name = "Column.Grade")]
         [Required()]
         public int? GradeId { get; set; }
+        [Display(Name = "Column.Grade")]
         public GradeInfo Grade { get; set; }
 
         [Display(Name = "Column.Name")]
