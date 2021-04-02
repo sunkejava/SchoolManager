@@ -207,6 +207,51 @@
   <data name="Codegen.VMNs" xml:space="preserve">
     <value>VMNs</value>
   </data>
+  <data name="Column.Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Column.Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Column.Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="Column.EnglishName" xml:space="preserve">
+    <value>EnglishName</value>
+  </data>
+  <data name="Column.Grade" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="Column.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Column.ParentZoningCode" xml:space="preserve">
+    <value>ParentZoningCode</value>
+  </data>
+  <data name="Column.Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Column.PinyinName" xml:space="preserve">
+    <value>PinyinName</value>
+  </data>
+  <data name="Column.SimpleName" xml:space="preserve">
+    <value>SimpleName</value>
+  </data>
+  <data name="Column.SimplePinyinName" xml:space="preserve">
+    <value>SimplePinyinName</value>
+  </data>
+  <data name="Column.TypeOfEducation" xml:space="preserve">
+    <value>TypeOfEducation</value>
+  </data>
+  <data name="Column.TypeOfUrbanAndRural" xml:space="preserve">
+    <value>TypeOfUrbanAndRural</value>
+  </data>
+  <data name="Column.TypeOfUrbanAndRuralCode" xml:space="preserve">
+    <value>TypeOfUrbanAndRuralCode</value>
+  </data>
+  <data name="Column.ZoningCode" xml:space="preserve">
+    <value>ZoningCode</value>
+  </data>
   <data name="Login.ChangePassword" xml:space="preserve">
     <value>Change my password</value>
   </data>
@@ -264,23 +309,71 @@
   <data name="MenuKey.Api" xml:space="preserve">
     <value>Buildin Api</value>
   </data>
+  <data name="MenuKey.BasicInfo" xml:space="preserve">
+    <value>BasicInfo</value>
+  </data>
+  <data name="MenuKey.ClassInfo" xml:space="preserve">
+    <value>ClassInfo</value>
+  </data>
   <data name="MenuKey.DataPrivilege" xml:space="preserve">
     <value>Data Privilege</value>
+  </data>
+  <data name="MenuKey.Department" xml:space="preserve">
+    <value>DepartInfo</value>
+  </data>
+  <data name="MenuKey.Division" xml:space="preserve">
+    <value>Division</value>
+  </data>
+  <data name="MenuKey.EducationInfo" xml:space="preserve">
+    <value>EducationInfo</value>
+  </data>
+  <data name="MenuKey.GradeClassInfo" xml:space="preserve">
+    <value>GradeClassInfo</value>
   </data>
   <data name="MenuKey.GroupManagement" xml:space="preserve">
     <value>Group Management</value>
   </data>
+  <data name="MenuKey.HonorInfo" xml:space="preserve">
+    <value>HonorInfo</value>
+  </data>
   <data name="MenuKey.Login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="MenuKey.MajorInfo" xml:space="preserve">
+    <value>MajorInfo</value>
   </data>
   <data name="MenuKey.MenuMangement" xml:space="preserve">
     <value>Menu Mangement</value>
   </data>
+  <data name="MenuKey.Position" xml:space="preserve">
+    <value>PositionInfo</value>
+  </data>
+  <data name="MenuKey.ProjectInfo" xml:space="preserve">
+    <value>ProjectInfo</value>
+  </data>
   <data name="MenuKey.RoleManagement" xml:space="preserve">
     <value>Role Management</value>
   </data>
+  <data name="MenuKey.SchoolInfo" xml:space="preserve">
+    <value>SchoolInfo</value>
+  </data>
+  <data name="MenuKey.StudentInfo" xml:space="preserve">
+    <value>StudentInfo</value>
+  </data>
+  <data name="MenuKey.SubjectInfo" xml:space="preserve">
+    <value>SubjectInfo</value>
+  </data>
   <data name="MenuKey.SystemManagement" xml:space="preserve">
     <value>System</value>
+  </data>
+  <data name="MenuKey.SystemSetting" xml:space="preserve">
+    <value>SystemSetting</value>
+  </data>
+  <data name="MenuKey.TeacherInfo" xml:space="preserve">
+    <value>TeacherInfo</value>
+  </data>
+  <data name="MenuKey.TitleInfo" xml:space="preserve">
+    <value>TitleInfo</value>
   </data>
   <data name="MenuKey.UserManagement" xml:space="preserve">
     <value>User Management</value>

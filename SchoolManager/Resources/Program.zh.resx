@@ -207,6 +207,51 @@
   <data name="Codegen.VMNs" xml:space="preserve">
     <value>VM命名空间</value>
   </data>
+  <data name="Column.Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="Column.Code" xml:space="preserve">
+    <value>编码</value>
+  </data>
+  <data name="Column.Contacts" xml:space="preserve">
+    <value>联系人</value>
+  </data>
+  <data name="Column.EnglishName" xml:space="preserve">
+    <value>英文名称</value>
+  </data>
+  <data name="Column.Grade" xml:space="preserve">
+    <value>年级</value>
+  </data>
+  <data name="Column.Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Column.ParentZoningCode" xml:space="preserve">
+    <value>上级区划代码</value>
+  </data>
+  <data name="Column.Phone" xml:space="preserve">
+    <value>联系电话</value>
+  </data>
+  <data name="Column.PinyinName" xml:space="preserve">
+    <value>全拼名称</value>
+  </data>
+  <data name="Column.SimpleName" xml:space="preserve">
+    <value>简称</value>
+  </data>
+  <data name="Column.SimplePinyinName" xml:space="preserve">
+    <value>简拼名称</value>
+  </data>
+  <data name="Column.TypeOfEducation" xml:space="preserve">
+    <value>教育类型</value>
+  </data>
+  <data name="Column.TypeOfUrbanAndRural" xml:space="preserve">
+    <value>驻地城乡类型</value>
+  </data>
+  <data name="Column.TypeOfUrbanAndRuralCode" xml:space="preserve">
+    <value>城乡类型代码</value>
+  </data>
+  <data name="Column.ZoningCode" xml:space="preserve">
+    <value>区划代码</value>
+  </data>
   <data name="Login.ChangePassword" xml:space="preserve">
     <value>修改密码</value>
   </data>
@@ -264,23 +309,71 @@
   <data name="MenuKey.Api" xml:space="preserve">
     <value>内置Api</value>
   </data>
+  <data name="MenuKey.BasicInfo" xml:space="preserve">
+    <value>基础资料</value>
+  </data>
+  <data name="MenuKey.ClassInfo" xml:space="preserve">
+    <value>班级管理</value>
+  </data>
   <data name="MenuKey.DataPrivilege" xml:space="preserve">
     <value>数据权限</value>
+  </data>
+  <data name="MenuKey.Department" xml:space="preserve">
+    <value>部门管理</value>
+  </data>
+  <data name="MenuKey.Division" xml:space="preserve">
+    <value>区划管理</value>
+  </data>
+  <data name="MenuKey.EducationInfo" xml:space="preserve">
+    <value>学历管理</value>
+  </data>
+  <data name="MenuKey.GradeClassInfo" xml:space="preserve">
+    <value>年级管理</value>
   </data>
   <data name="MenuKey.GroupManagement" xml:space="preserve">
     <value>用户组管理</value>
   </data>
+  <data name="MenuKey.HonorInfo" xml:space="preserve">
+    <value>荣誉奖励管理</value>
+  </data>
   <data name="MenuKey.Login" xml:space="preserve">
     <value>登录</value>
+  </data>
+  <data name="MenuKey.MajorInfo" xml:space="preserve">
+    <value>专业管理</value>
   </data>
   <data name="MenuKey.MenuMangement" xml:space="preserve">
     <value>菜单管理</value>
   </data>
+  <data name="MenuKey.Position" xml:space="preserve">
+    <value>职称管理</value>
+  </data>
+  <data name="MenuKey.ProjectInfo" xml:space="preserve">
+    <value>项目管理</value>
+  </data>
   <data name="MenuKey.RoleManagement" xml:space="preserve">
     <value>角色管理</value>
   </data>
+  <data name="MenuKey.SchoolInfo" xml:space="preserve">
+    <value>院校管理</value>
+  </data>
+  <data name="MenuKey.StudentInfo" xml:space="preserve">
+    <value>学生管理</value>
+  </data>
+  <data name="MenuKey.SubjectInfo" xml:space="preserve">
+    <value>科目管理</value>
+  </data>
   <data name="MenuKey.SystemManagement" xml:space="preserve">
     <value>系统管理</value>
+  </data>
+  <data name="MenuKey.SystemSetting" xml:space="preserve">
+    <value>基础配置</value>
+  </data>
+  <data name="MenuKey.TeacherInfo" xml:space="preserve">
+    <value>教师管理</value>
+  </data>
+  <data name="MenuKey.TitleInfo" xml:space="preserve">
+    <value>职位管理</value>
   </data>
   <data name="MenuKey.UserManagement" xml:space="preserve">
     <value>用户管理</value>
