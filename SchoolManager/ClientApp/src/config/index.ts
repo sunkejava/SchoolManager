@@ -27,7 +27,12 @@ const config = {
   /**
    *  cookies 过期时间
    */
-  cookiesExpires: 365
+    cookiesExpires: 365,
+  /**
+   * 
+   */
+    titleName: "校园管理系统"
+
 };
 // prod环境非调试
 if (process.env.NODE_ENV === "production") {

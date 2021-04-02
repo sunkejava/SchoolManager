@@ -1,7 +1,7 @@
 <template>
     <el-card class="app-login-form">
         <el-form :model="formData" label-width="0">
-            <h1>WalkingTec MVVM</h1>
+            <h1>{{SysInfo.Title}}</h1>
             <el-form-item>
                 <el-input v-model="formData.account" :placeholder="$t('login.pleaseEnterUsername')" prefix-icon="el-icon-user" />
             </el-form-item>
@@ -31,6 +31,9 @@ export default class Login extends Vue {
     formData = {
         account: config.development ? "admin" : "",
         password: config.development ? "000000" : ""
+    };
+    SysInfo = {
+        Title: config.titleName
     };
     isloading: boolean = false;
     get isDisabled() {

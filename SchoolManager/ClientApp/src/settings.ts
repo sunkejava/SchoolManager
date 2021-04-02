@@ -1,4 +1,5 @@
 import { getSettings } from "@/util/cookie";
+import config from "./config";
 
 interface ISettings {
   title: string; // Overrides the default title
@@ -17,7 +18,7 @@ interface ISettings {
 const obj = getSettings() || {};
 
 const settings: ISettings = {
-  title: obj.title || "WTM",
+  title: obj.title || config.titleName,
   theme: obj.theme,
   fixedHeader: obj.fixedHeader === undefined ? true : obj.fixedHeader,
   showSettings: obj.showSettings === undefined ? true : obj.showSettings,

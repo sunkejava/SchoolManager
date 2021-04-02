@@ -20,7 +20,7 @@
           <img src="static/img/code.png" width="88">
         </el-col>
       </el-row>
-      <div class="app-login-record"><a href="https://wtmdoc.walkingtec.cn/" target="_blank"> Help</a> © 2019 WTM all rights reserved</div>
+      <div class="app-login-record"><a href="#" target="_blank"> Help</a> © 2021 WTM all rights reserved By Decline</div>
     </el-footer>
   </el-container>
 </template>
