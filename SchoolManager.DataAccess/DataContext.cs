@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using SchoolManager.Model.BasicInfo;
+using SchoolManager.Model.Business;
 using WalkingTec.Mvvm.Core;
 
 namespace SchoolManager.DataAccess
@@ -30,6 +31,8 @@ namespace SchoolManager.DataAccess
         public DbSet<MajorInfo> majorInfos { get; set; }
 
         public DbSet<SubjectInfo> subjectInfos { get; set; }
+
+        public DbSet<StudentInfo> studentInfos { get; set; }
 
         public DataContext(CS cs)
              : base(cs)
@@ -190,6 +193,9 @@ namespace SchoolManager.DataAccess
                     new Division { Code = "", ParentCode = "", RuralCode = "", Name = "", IsValid = true},
 
                 });
+                //学生
+
+                //教师
                 await SaveChangesAsync();
             }
             return state;
@@ -205,7 +211,7 @@ namespace SchoolManager.DataAccess
     {
         public DataContext CreateDbContext(string[] args)
         {
-            return new DataContext("server=127.0.0.1;database=school_db;user=root;pwd=123456", DBTypeEnum.SqlServer);
+            return new DataContext("server=192.168.1.105;database=school_db2;user=root;pwd=123456", DBTypeEnum.MySql);
         }
     }
 

@@ -101,6 +101,13 @@
     "Text": "班级信息",
     "Url": "/gradeclassinfo"
     }
+,{
+    "Id": "60dcf7d3-4000-4b77-ae70-c5e60443997e",
+    "ParentId": null,
+    "Text": "学生信息",
+    "Url": "/studentinfo"
+    }
+
 
 
 

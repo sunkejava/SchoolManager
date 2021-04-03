@@ -211,16 +211,34 @@
     <value>地址</value>
   </data>
   <data name="Column.Code" xml:space="preserve">
-    <value>编码</value>
+    <value>代码</value>
   </data>
   <data name="Column.Contacts" xml:space="preserve">
     <value>联系人</value>
+  </data>
+  <data name="Column.EmContacts" xml:space="preserve">
+    <value>紧急联系人</value>
+  </data>
+  <data name="Column.EmContactsPhone" xml:space="preserve">
+    <value>联系人电话</value>
   </data>
   <data name="Column.EnglishName" xml:space="preserve">
     <value>英文名称</value>
   </data>
   <data name="Column.Grade" xml:space="preserve">
     <value>年级</value>
+  </data>
+  <data name="Column.GradeClass" xml:space="preserve">
+    <value>班级</value>
+  </data>
+  <data name="Column.Honor" xml:space="preserve">
+    <value>荣誉</value>
+  </data>
+  <data name="Column.InTake" xml:space="preserve">
+    <value>入学时间</value>
+  </data>
+  <data name="Column.Major" xml:space="preserve">
+    <value>专业</value>
   </data>
   <data name="Column.Name" xml:space="preserve">
     <value>名称</value>
@@ -234,11 +252,20 @@
   <data name="Column.PinyinName" xml:space="preserve">
     <value>全拼名称</value>
   </data>
+  <data name="Column.SchoolName" xml:space="preserve">
+    <value>毕业院校</value>
+  </data>
   <data name="Column.SimpleName" xml:space="preserve">
     <value>简称</value>
   </data>
   <data name="Column.SimplePinyinName" xml:space="preserve">
     <value>简拼名称</value>
+  </data>
+  <data name="Column.Student" xml:space="preserve">
+    <value>学生</value>
+  </data>
+  <data name="Column.Subject" xml:space="preserve">
+    <value>科目</value>
   </data>
   <data name="Column.TypeOfEducation" xml:space="preserve">
     <value>教育类型</value>
@@ -248,6 +275,9 @@
   </data>
   <data name="Column.TypeOfUrbanAndRuralCode" xml:space="preserve">
     <value>城乡类型代码</value>
+  </data>
+  <data name="Column.University" xml:space="preserve">
+    <value>就读大学</value>
   </data>
   <data name="Column.ZoningCode" xml:space="preserve">
     <value>区划代码</value>
@@ -752,6 +782,9 @@
   </data>
   <data name="Validate.{0}stringmax{1}" xml:space="preserve">
     <value>{0}最多输入{1}个字符</value>
+  </data>
+  <data name="Validate.{0}zipcode" xml:space="preserve">
+    <value>{0}必须是6位数字</value>
   </data>
   <data name="_Admin.Account" xml:space="preserve">
     <value>账号</value>

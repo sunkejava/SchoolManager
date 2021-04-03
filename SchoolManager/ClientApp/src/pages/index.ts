@@ -98,7 +98,14 @@ export default {
     path: '/gradeclassinfo',
     controller: 'SchoolManager.Controllers,GradeClassInfo'
     }
+
+, studentinfo: {
+    name: '学生信息',
+    path: '/studentinfo',
+    controller: 'SchoolManager.Controllers,StudentInfo'
+    }
 /**WTM**/
+ 
  
  
  
