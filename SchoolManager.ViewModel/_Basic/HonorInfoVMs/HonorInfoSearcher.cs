@@ -16,6 +16,8 @@ namespace SchoolManager.ViewModel._Basic.HonorInfoVMs
         public String Code { get; set; }
         [Display(Name = "Column.Name")]
         public String Name { get; set; }
+        [Display(Name = "Column.TypeOfHonorEnum")]
+        public TypeOfHonorEnum? TypeOfHonor { get; set; }
 
         protected override void InitVM()
         {

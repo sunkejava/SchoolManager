@@ -30,8 +30,8 @@ export default class Index extends Vue {
                     isHidden: true
                 },
              "Entity.Code":{
-                 label: "编码",
-                 rules: [{ required: true, message: "编码"+this.$t("form.notnull"),trigger: "blur" }],
+                 label: "代码",
+                 rules: [{ required: true, message: "代码"+this.$t("form.notnull"),trigger: "blur" }],
                     type: "input"
             },
              "Entity.Name":{

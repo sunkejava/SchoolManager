@@ -104,7 +104,14 @@ export default {
     path: '/studentinfo',
     controller: 'SchoolManager.Controllers,StudentInfo'
     }
+
+, majormanager: {
+    name: '奖惩处理',
+    path: '/majormanager',
+    controller: 'SchoolManager.Controllers,MajorManager'
+    }
 /**WTM**/
+ 
  
  
  

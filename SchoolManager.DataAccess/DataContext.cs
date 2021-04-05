@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using SchoolManager.Model.BasicInfo;
 using SchoolManager.Model.Business;
+using SchoolManager.Model.MajorMiddleInfo;
 using WalkingTec.Mvvm.Core;
 
 namespace SchoolManager.DataAccess
@@ -33,6 +34,14 @@ namespace SchoolManager.DataAccess
         public DbSet<SubjectInfo> subjectInfos { get; set; }
 
         public DbSet<StudentInfo> studentInfos { get; set; }
+
+        public DbSet<MajorManager> majorManagers { get; set; }
+
+        public DbSet<TeacherInfo> teacherInfos { get; set; }
+
+        public DbSet<TeacherMajorManager> teacherMajorManagers { get; set; }
+
+        public DbSet<TeacherProjectManager> teacherProjectManagers { get; set; }
 
         public DataContext(CS cs)
              : base(cs)
@@ -139,54 +148,63 @@ namespace SchoolManager.DataAccess
                     new SubjectInfo { Code = "13", Name = "书法", IsValid = true },
                     new SubjectInfo { Code = "14", Name = "历史", IsValid = true },
                 });
-                //职称管理
+                //职位管理
                 Set<PositionInfo>().AddRange(new PositionInfo[] {
-                    new PositionInfo { Code = "01", Name = "三级教师", IsValid = true },
-                    new PositionInfo { Code = "02", Name = "二级教师", IsValid = true },
-                    new PositionInfo { Code = "03", Name = "一级教师", IsValid = true },
-                    new PositionInfo { Code = "04", Name = "高级教师", IsValid = true },
-                    new PositionInfo { Code = "05", Name = "正高级教师", IsValid = true },
+                    new PositionInfo { Code = "01", Name = "校长", IsValid = true },
+                    new PositionInfo { Code = "02", Name = "副校长", IsValid = true },
+                    new PositionInfo { Code = "03", Name = "书记", IsValid = true },
+                    new PositionInfo { Code = "04", Name = "副书记", IsValid = true },
+                    new PositionInfo { Code = "05", Name = "教导主任", IsValid = true },
+                    new PositionInfo { Code = "06", Name = "副教导主任", IsValid = true },
+                    new PositionInfo { Code = "07", Name = "财务主任", IsValid = true },
+                    new PositionInfo { Code = "08", Name = "年级组长", IsValid = true },
+                    new PositionInfo { Code = "09", Name = "班主任", IsValid = true },
+                    new PositionInfo { Code = "10", Name = "副班主任", IsValid = true },
+                    new PositionInfo { Code = "11", Name = "代理班主任", IsValid = true },
+                    new PositionInfo { Code = "12", Name = "实习教师", IsValid = true },
                 });
                 //荣誉信息
                 Set<HonorInfo>().AddRange(new HonorInfo[] {
-                    new HonorInfo { Code = "01", Name = "全国模范教师", IsValid = true },
-                    new HonorInfo { Code = "02", Name = "全国优秀教师", IsValid = true },
-                    new HonorInfo { Code = "03", Name = "全国优秀教育工作者", IsValid = true },
-                    new HonorInfo { Code = "04", Name = "全国教育系统先进工作者", IsValid = true },
-                    new HonorInfo { Code = "05", Name = "全国教书育人楷模", IsValid = true },
-                    new HonorInfo { Code = "06", Name = "省级优秀教师", IsValid = true },
-                    new HonorInfo { Code = "07", Name = "省级骨干教师", IsValid = true },
-                    new HonorInfo { Code = "08", Name = "市级优秀班主任", IsValid = true },
-                    new HonorInfo { Code = "09", Name = "市级优秀教师", IsValid = true },
-                    new HonorInfo { Code = "10", Name = "市级骨干教师", IsValid = true },
-                    new HonorInfo { Code = "11", Name = "市级教坛新秀", IsValid = true },
+                    new HonorInfo { Code = "01", Name = "全国模范教师",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "02", Name = "全国优秀教师",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "03", Name = "全国优秀教育工作者",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "04", Name = "全国教育系统先进工作者",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "05", Name = "全国教书育人楷模",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "06", Name = "省级优秀教师",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "07", Name = "省级骨干教师",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "08", Name = "市级优秀班主任",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "09", Name = "市级优秀教师",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "10", Name = "市级骨干教师",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "11", Name = "市级教坛新秀",TypeOfHonor = TypeOfHonorEnum.Teacher, IsValid = true },
+                    new HonorInfo { Code = "12", Name = "三好学生",TypeOfHonor = TypeOfHonorEnum.Student, IsValid = true },
+                    new HonorInfo { Code = "13", Name = "优秀班干部",TypeOfHonor = TypeOfHonorEnum.Student, IsValid = true },
+                    new HonorInfo { Code = "14", Name = "优秀团员",TypeOfHonor = TypeOfHonorEnum.Student, IsValid = true },
+                    new HonorInfo { Code = "15", Name = "优秀团干",TypeOfHonor = TypeOfHonorEnum.Student, IsValid = true },
+                    new HonorInfo { Code = "16", Name = "学生会成员",TypeOfHonor = TypeOfHonorEnum.Student, IsValid = true },
+                    new HonorInfo { Code = "17", Name = "市级三好学生",TypeOfHonor = TypeOfHonorEnum.Student, IsValid = true },
                 });
-                //职位管理
+                //职称管理
                 Set<TitleInfo>().AddRange(new TitleInfo[]
                 {
-                    new TitleInfo { Code = "01", Name = "校长", IsValid = true },
-                    new TitleInfo { Code = "02", Name = "副校长", IsValid = true },
-                    new TitleInfo { Code = "03", Name = "书记", IsValid = true },
-                    new TitleInfo { Code = "04", Name = "副书记", IsValid = true },
-                    new TitleInfo { Code = "05", Name = "教导主任", IsValid = true },
-                    new TitleInfo { Code = "06", Name = "副教导主任", IsValid = true },
-                    new TitleInfo { Code = "07", Name = "财务主任", IsValid = true },
-                    new TitleInfo { Code = "08", Name = "年级组长", IsValid = true },
-                    new TitleInfo { Code = "09", Name = "班主任", IsValid = true },
-                    new TitleInfo { Code = "10", Name = "副班主任", IsValid = true },
-                    new TitleInfo { Code = "11", Name = "代理班主任", IsValid = true },
-                    new TitleInfo { Code = "12", Name = "实习教师", IsValid = true },
+                    new TitleInfo { Code = "01", Name = "三级教师", IsValid = true },
+                    new TitleInfo { Code = "02", Name = "二级教师", IsValid = true },
+                    new TitleInfo { Code = "03", Name = "一级教师", IsValid = true },
+                    new TitleInfo { Code = "04", Name = "高级教师", IsValid = true },
+                    new TitleInfo { Code = "05", Name = "正高级教师", IsValid = true },                    
                 });
                 //培训项目
                 Set<ProjectInfo>().AddRange(new ProjectInfo[] {
-                    new ProjectInfo { Code = "01", Name = "信息化教学能力提升", IsValid = true },
-                    new ProjectInfo { Code = "02", Name = "心理学研修班", IsValid = true },
-                    new ProjectInfo { Code = "03", Name = "财经商贸", IsValid = true },
-                    new ProjectInfo { Code = "04", Name = "服务与管理", IsValid = true },
-                    new ProjectInfo { Code = "05", Name = "电子技术应用", IsValid = true },
-                    new ProjectInfo { Code = "06", Name = "信息化教学设计与实施", IsValid = true },
-                    new ProjectInfo { Code = "07", Name = "数字化教学资源开发", IsValid = true },
-                    new ProjectInfo { Code = "08", Name = "专业提升", IsValid = true },
+                    new ProjectInfo { Code = "01", Name = "信息化教学能力提升",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "02", Name = "心理学研修班",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "03", Name = "财经商贸",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "04", Name = "服务与管理",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "05", Name = "电子技术应用",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "06", Name = "信息化教学设计与实施",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "07", Name = "数字化教学资源开发",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "08", Name = "专业提升",TypeOfProject = TypeOfProjectEnum.Teacher, IsValid = true },
+                    new ProjectInfo { Code = "09", Name = "叶圣陶杯",TypeOfProject = TypeOfProjectEnum.Student, IsValid = true },
+                    new ProjectInfo { Code = "10", Name = "奥林匹克数据竞赛",TypeOfProject = TypeOfProjectEnum.Student, IsValid = true },
+                    new ProjectInfo { Code = "11", Name = "作文优秀奖",TypeOfProject = TypeOfProjectEnum.Student, IsValid = true },
                 });
                 //5级区划
                 Set<Division>().AddRange(new Division[] {

@@ -12,25 +12,24 @@ using WalkingTec.Mvvm.Core.Attributes;
 
 namespace SchoolManager.Model.MajorMiddleInfo
 {
+
     /// <summary>
-    /// 学生专业中间表
-    /// 处理多对多业务
+    /// 教师荣誉
     /// </summary>
     [MiddleTable()]
-    [Table("Middle_StudentHonor")]
-    public class StudentHonor : BasePoco
+    [Table("Middle_TeacherHonor")]
+    public class TeacherHonor : BasePoco
     {
         [Display(Name = "Column.Honor")]
         public HonorInfo Honor { get; set; }
 
-        [Display(Name = "Column.Student")]
-        public StudentInfo Student { get; set; }
+        [Display(Name = "Column.Teacher")]
+        public TeacherInfo Teacher { get; set; }
 
         [Display(Name = "荣誉ID")]
         public int HonorId { get; set; }
 
-        [Display(Name = "学生ID")]
-        public int StudentId { get; set; }
+        [Display(Name = "教师ID")]
+        public int TeacherId { get; set; }
     }
-
 }

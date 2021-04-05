@@ -16,6 +16,8 @@ namespace SchoolManager.ViewModel._Basic.HonorInfoVMs
         public ExcelPropety Code_Excel = ExcelPropety.CreateProperty<HonorInfo>(x => x.Code);
         [Display(Name = "Column.Name")]
         public ExcelPropety Name_Excel = ExcelPropety.CreateProperty<HonorInfo>(x => x.Name);
+        [Display(Name = "Column.TypeOfHonorEnum")]
+        public ExcelPropety TypeOfHonor_Excel = ExcelPropety.CreateProperty<HonorInfo>(x => x.TypeOfHonor);
 
 	    protected override void InitVM()
         {

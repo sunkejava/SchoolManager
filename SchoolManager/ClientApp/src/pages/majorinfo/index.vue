@@ -44,7 +44,7 @@ export default class Index extends Vue {
             },
             formItem: {
                 "Code":{
-                    label: "编码",
+                    label: "代码",
                     rules: [],
                     type: "input"
               },

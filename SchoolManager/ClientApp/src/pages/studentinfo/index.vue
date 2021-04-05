@@ -40,6 +40,18 @@ import i18n from "@/lang";
 export default class Index extends Vue {
     isActive: boolean = false;
     @Action
+    getHonorInfo;
+    @State
+    getHonorInfoData;
+    @Action
+    getSubjectInfo;
+    @State
+    getSubjectInfoData;
+    @Action
+    getSchoolInfo;
+    @State
+    getSchoolInfoData;
+    @Action
     getMajorInfo;
     @State
     getMajorInfoData;
@@ -68,10 +80,34 @@ export default class Index extends Vue {
                         "end-placeholder": this.$t("table.enddate")
                     }
               },
+                "SelectedStudentHonorsIDs":{
+                    label: "学生荣誉",
+                    rules: [],
+                    type: "select",
+                    children: this.getHonorInfoData,
+                    props: {
+                        clearable: true ,
+                        multiple: true,
+                        "collapse-tags": true
+                    }
+              },
+                "SelectedStudentSubjectsIDs":{
+                    label: "学生科目",
+                    rules: [],
+                    type: "select",
+                    children: this.getSubjectInfoData,
+                    props: {
+                        clearable: true ,
+                        multiple: true,
+                        "collapse-tags": true
+                    }
+                    ,isHidden: !this.isActive
+              },
                 "Code":{
                     label: "代码",
                     rules: [],
                     type: "input"
+                    ,isHidden: !this.isActive
               },
                 "Name":{
                     label: "名称",
@@ -103,6 +139,17 @@ export default class Index extends Vue {
                     type: "input"
                     ,isHidden: !this.isActive
               },
+                "SchoolInfoId":{
+                    label: "毕业院校",
+                    rules: [],
+                    type: "select",
+                    children: this.getSchoolInfoData,
+                    props: {
+                        clearable: true,
+                        placeholder: '全部'
+                    }
+                    ,isHidden: !this.isActive
+              },
                 "MajorInfoId":{
                     label: "专业",
                     rules: [],
@@ -131,6 +178,9 @@ export default class Index extends Vue {
     }
 
      mounted() {
+        this.getHonorInfo();
+        this.getSubjectInfo();
+        this.getSchoolInfo();
         this.getMajorInfo();
         this.getGradeClassInfo();
 

@@ -13,7 +13,7 @@ export const TABLE_HEADER: Array<object> = [
 
     {
         key: "Code",
-        label: "编码"
+        label: "代码"
     },
     {
         key: "Name",

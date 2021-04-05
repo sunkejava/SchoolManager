@@ -9,12 +9,16 @@ using SchoolManager.Model.Business;
 using SchoolManager.Model.BasicInfo;
 
 
-namespace SchoolManager.ViewModel._Business.StudentInfoVMs
+namespace SchoolManager.ViewModel._Common.StudentInfoVMs
 {
     public partial class StudentInfoSearcher : BaseSearcher
     {
         [Display(Name = "Column.InTake")]
         public DateRange InTake { get; set; }
+        [Display(Name = "学生荣誉")]
+        public List<int> SelectedStudentHonorsIDs { get; set; }
+        [Display(Name = "学生科目")]
+        public List<int> SelectedStudentSubjectsIDs { get; set; }
         [Display(Name = "Column.Code")]
         public String Code { get; set; }
         [Display(Name = "Column.Name")]
@@ -27,6 +31,8 @@ namespace SchoolManager.ViewModel._Business.StudentInfoVMs
         public String EmContacts { get; set; }
         [Display(Name = "Column.EmContactsPhone")]
         public String EmConPhone { get; set; }
+        [Display(Name = "Column.SchoolName")]
+        public int? SchoolInfoId { get; set; }
         [Display(Name = "Column.Major")]
         public int? MajorInfoId { get; set; }
         [Display(Name = "Column.GradeClass")]

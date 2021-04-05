@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using WalkingTec.Mvvm.Core;
 using SchoolManager.Controllers;
-using SchoolManager.ViewModel._Business.StudentInfoVMs;
+using SchoolManager.ViewModel._Common.StudentInfoVMs;
 using SchoolManager.Model.Business;
 using SchoolManager.DataAccess;
 using SchoolManager.Model.BasicInfo;
@@ -39,13 +39,13 @@ namespace SchoolManager.Test
             StudentInfoVM vm = _controller.Wtm.CreateVM<StudentInfoVM>();
             StudentInfo v = new StudentInfo();
             
-            v.ID = 6;
-            v.Code = "Uz98";
-            v.Name = "NyYozvFB";
-            v.CellPhone = "RrngOzdfE";
-            v.ZipCode = "JmAE";
-            v.EmContacts = "WPYPQa";
-            v.EmConPhone = "4hXF";
+            v.ID = 97;
+            v.Code = "lK6DLi";
+            v.Name = "9NPwc";
+            v.CellPhone = "dMC2o1oD2";
+            v.ZipCode = "Wjntc4";
+            v.EmContacts = "Jvy3jjC";
+            v.EmConPhone = "7FC9poO7e";
             v.SchoolInfoId = AddSchoolInfo();
             v.MajorInfoId = AddMajorInfo();
             v.PhotoId = AddPhoto();
@@ -58,13 +58,13 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<StudentInfo>().Find(v.ID);
                 
-                Assert.AreEqual(data.ID, 6);
-                Assert.AreEqual(data.Code, "Uz98");
-                Assert.AreEqual(data.Name, "NyYozvFB");
-                Assert.AreEqual(data.CellPhone, "RrngOzdfE");
-                Assert.AreEqual(data.ZipCode, "JmAE");
-                Assert.AreEqual(data.EmContacts, "WPYPQa");
-                Assert.AreEqual(data.EmConPhone, "4hXF");
+                Assert.AreEqual(data.ID, 97);
+                Assert.AreEqual(data.Code, "lK6DLi");
+                Assert.AreEqual(data.Name, "9NPwc");
+                Assert.AreEqual(data.CellPhone, "dMC2o1oD2");
+                Assert.AreEqual(data.ZipCode, "Wjntc4");
+                Assert.AreEqual(data.EmContacts, "Jvy3jjC");
+                Assert.AreEqual(data.EmConPhone, "7FC9poO7e");
                 Assert.AreEqual(data.CreateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.CreateTime.Value).Seconds < 10);
             }
@@ -77,13 +77,13 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
        			
-                v.ID = 6;
-                v.Code = "Uz98";
-                v.Name = "NyYozvFB";
-                v.CellPhone = "RrngOzdfE";
-                v.ZipCode = "JmAE";
-                v.EmContacts = "WPYPQa";
-                v.EmConPhone = "4hXF";
+                v.ID = 97;
+                v.Code = "lK6DLi";
+                v.Name = "9NPwc";
+                v.CellPhone = "dMC2o1oD2";
+                v.ZipCode = "Wjntc4";
+                v.EmContacts = "Jvy3jjC";
+                v.EmConPhone = "7FC9poO7e";
                 v.SchoolInfoId = AddSchoolInfo();
                 v.MajorInfoId = AddMajorInfo();
                 v.PhotoId = AddPhoto();
@@ -97,12 +97,12 @@ namespace SchoolManager.Test
             v = new StudentInfo();
             v.ID = oldID;
        		
-            v.Code = "pGvsLp";
-            v.Name = "KU1Oe0";
-            v.CellPhone = "FQm4wobP";
-            v.ZipCode = "rm78fj";
-            v.EmContacts = "7Xi9d3M";
-            v.EmConPhone = "QOi";
+            v.Code = "jhjph";
+            v.Name = "BezCb";
+            v.CellPhone = "q8ksam";
+            v.ZipCode = "O5kEW";
+            v.EmContacts = "nSgp7";
+            v.EmConPhone = "fcYUZiDK";
             vm.Entity = v;
             vm.FC = new Dictionary<string, object>();
 			
@@ -124,12 +124,12 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<StudentInfo>().Find(v.ID);
  				
-                Assert.AreEqual(data.Code, "pGvsLp");
-                Assert.AreEqual(data.Name, "KU1Oe0");
-                Assert.AreEqual(data.CellPhone, "FQm4wobP");
-                Assert.AreEqual(data.ZipCode, "rm78fj");
-                Assert.AreEqual(data.EmContacts, "7Xi9d3M");
-                Assert.AreEqual(data.EmConPhone, "QOi");
+                Assert.AreEqual(data.Code, "jhjph");
+                Assert.AreEqual(data.Name, "BezCb");
+                Assert.AreEqual(data.CellPhone, "q8ksam");
+                Assert.AreEqual(data.ZipCode, "O5kEW");
+                Assert.AreEqual(data.EmContacts, "nSgp7");
+                Assert.AreEqual(data.EmConPhone, "fcYUZiDK");
                 Assert.AreEqual(data.UpdateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.UpdateTime.Value).Seconds < 10);
             }
@@ -143,13 +143,13 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
         		
-                v.ID = 6;
-                v.Code = "Uz98";
-                v.Name = "NyYozvFB";
-                v.CellPhone = "RrngOzdfE";
-                v.ZipCode = "JmAE";
-                v.EmContacts = "WPYPQa";
-                v.EmConPhone = "4hXF";
+                v.ID = 97;
+                v.Code = "lK6DLi";
+                v.Name = "9NPwc";
+                v.CellPhone = "dMC2o1oD2";
+                v.ZipCode = "Wjntc4";
+                v.EmContacts = "Jvy3jjC";
+                v.EmConPhone = "7FC9poO7e";
                 v.SchoolInfoId = AddSchoolInfo();
                 v.MajorInfoId = AddMajorInfo();
                 v.PhotoId = AddPhoto();
@@ -169,24 +169,24 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 				
-                v1.ID = 6;
-                v1.Code = "Uz98";
-                v1.Name = "NyYozvFB";
-                v1.CellPhone = "RrngOzdfE";
-                v1.ZipCode = "JmAE";
-                v1.EmContacts = "WPYPQa";
-                v1.EmConPhone = "4hXF";
+                v1.ID = 97;
+                v1.Code = "lK6DLi";
+                v1.Name = "9NPwc";
+                v1.CellPhone = "dMC2o1oD2";
+                v1.ZipCode = "Wjntc4";
+                v1.EmContacts = "Jvy3jjC";
+                v1.EmConPhone = "7FC9poO7e";
                 v1.SchoolInfoId = AddSchoolInfo();
                 v1.MajorInfoId = AddMajorInfo();
                 v1.PhotoId = AddPhoto();
                 v1.GradeClassId = AddGradeClass();
-                v2.ID = 31;
-                v2.Code = "pGvsLp";
-                v2.Name = "KU1Oe0";
-                v2.CellPhone = "FQm4wobP";
-                v2.ZipCode = "rm78fj";
-                v2.EmContacts = "7Xi9d3M";
-                v2.EmConPhone = "QOi";
+                v2.ID = 54;
+                v2.Code = "jhjph";
+                v2.Name = "BezCb";
+                v2.CellPhone = "q8ksam";
+                v2.ZipCode = "O5kEW";
+                v2.EmContacts = "nSgp7";
+                v2.EmConPhone = "fcYUZiDK";
                 v2.SchoolInfoId = v1.SchoolInfoId; 
                 v2.MajorInfoId = v1.MajorInfoId; 
                 v2.PhotoId = v1.PhotoId; 
@@ -218,18 +218,18 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 
-                v.ID = 69;
-                v.Code = "SS8YYt8";
-                v.Name = "rRLu8WOtN";
-                v.EnglishName = "cgEtb";
-                v.PinyinName = "Cjp";
-                v.SimplePinyinName = "TCAM";
-                v.SimpleName = "A17H1N48";
-                v.Contacts = "mWAILbby";
-                v.Phone = "nHf6sXodt";
-                v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.GDJY;
-                v.Address = "n81";
-                v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.CZ;
+                v.ID = 75;
+                v.Code = "nTRX";
+                v.Name = "E1DeNB";
+                v.EnglishName = "RunNvxQ";
+                v.PinyinName = "77a";
+                v.SimplePinyinName = "IUvzv4N";
+                v.SimpleName = "7ztAH8H";
+                v.Contacts = "1aK";
+                v.Phone = "DWNT9EsX";
+                v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.CDJY;
+                v.Address = "1ggSgGISm";
+                v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.XZXQ;
                 context.Set<SchoolInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -242,9 +242,9 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 
-                v.ID = 60;
-                v.Code = "d466y";
-                v.Name = "ycF3x7S7U";
+                v.ID = 95;
+                v.Code = "CSiT";
+                v.Name = "b2SGAGBlh";
                 context.Set<MajorInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -257,13 +257,13 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 
-                v.FileName = "Dc8";
-                v.FileExt = "gxnxHB";
-                v.Path = "0iJHf4t";
-                v.Length = 66;
-                v.SaveMode = "Ssx6XyKDR";
-                v.ExtraInfo = "FcI95";
-                v.HandlerInfo = "aW4";
+                v.FileName = "LQdqi2G";
+                v.FileExt = "BKHY";
+                v.Path = "TytQ9";
+                v.Length = 94;
+                v.SaveMode = "RRF4H9Z";
+                v.ExtraInfo = "2DRw44V";
+                v.HandlerInfo = "RZ1mPv";
                 context.Set<FileAttachment>().Add(v);
                 context.SaveChanges();
             }
@@ -276,9 +276,9 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 
-                v.ID = 28;
-                v.Code = "EChih94AO";
-                v.Name = "HXzu9rH";
+                v.ID = 50;
+                v.Code = "0D10D";
+                v.Name = "DSHxhO";
                 context.Set<GradeInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -291,10 +291,10 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 
-                v.ID = 46;
-                v.Code = "BZx5KG";
+                v.ID = 8;
+                v.Code = "SXh6Cq1MT";
                 v.GradeId = AddGrade();
-                v.Name = "T7voVUdM";
+                v.Name = "jLh";
                 context.Set<GradeClassInfo>().Add(v);
                 context.SaveChanges();
             }

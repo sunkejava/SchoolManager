@@ -44,7 +44,7 @@ export default class Index extends Vue {
             },
             formItem: {
                 "Code":{
-                    label: "编码",
+                    label: "代码",
                     rules: [],
                     type: "input"
               },
@@ -52,6 +52,24 @@ export default class Index extends Vue {
                     label: "名称",
                     rules: [],
                     type: "input"
+              },
+                "EnglishName":{
+                    label: "英文名称",
+                    rules: [],
+                    type: "input"
+                    ,isHidden: !this.isActive
+              },
+                "PinyinName":{
+                    label: "全拼名称",
+                    rules: [],
+                    type: "input"
+                    ,isHidden: !this.isActive
+              },
+                "SimplePinyinName":{
+                    label: "简拼名称",
+                    rules: [],
+                    type: "input"
+                    ,isHidden: !this.isActive
               },
                 "SimpleName":{
                     label: "简称",
@@ -65,6 +83,12 @@ export default class Index extends Vue {
                     type: "input"
                     ,isHidden: !this.isActive
               },
+                "Phone":{
+                    label: "联系电话",
+                    rules: [],
+                    type: "input"
+                    ,isHidden: !this.isActive
+              },
                 "TypeOfEducation":{
                     label: "教育类型",
                     rules: [],
@@ -74,6 +98,12 @@ export default class Index extends Vue {
                         clearable: true,
                         placeholder: this.$t("form.all")
                     }
+                    ,isHidden: !this.isActive
+              },
+                "Address":{
+                    label: "地址",
+                    rules: [],
+                    type: "input"
                     ,isHidden: !this.isActive
               },
                 "TypeOfUrbanAndRural":{

@@ -16,6 +16,8 @@ namespace SchoolManager.ViewModel._Basic.ProjectInfoVMs
         public String Code { get; set; }
         [Display(Name = "Column.Name")]
         public String Name { get; set; }
+        [Display(Name = "Column.TypeOfProjectEnum")]
+        public TypeOfProjectEnum? TypeOfProject { get; set; }
 
         protected override void InitVM()
         {

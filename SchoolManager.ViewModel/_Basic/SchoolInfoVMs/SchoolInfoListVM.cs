@@ -37,9 +37,14 @@ namespace SchoolManager.ViewModel._Basic.SchoolInfoVMs
             var query = DC.Set<SchoolInfo>()
                 .CheckContain(Searcher.Code, x=>x.Code)
                 .CheckContain(Searcher.Name, x=>x.Name)
+                .CheckContain(Searcher.EnglishName, x=>x.EnglishName)
+                .CheckContain(Searcher.PinyinName, x=>x.PinyinName)
+                .CheckContain(Searcher.SimplePinyinName, x=>x.SimplePinyinName)
                 .CheckContain(Searcher.SimpleName, x=>x.SimpleName)
                 .CheckContain(Searcher.Contacts, x=>x.Contacts)
+                .CheckContain(Searcher.Phone, x=>x.Phone)
                 .CheckEqual(Searcher.TypeOfEducation, x=>x.TypeOfEducation)
+                .CheckContain(Searcher.Address, x=>x.Address)
                 .CheckEqual(Searcher.TypeOfUrbanAndRural, x=>x.TypeOfUrbanAndRural)
                 .Select(x => new SchoolInfo_View
                 {

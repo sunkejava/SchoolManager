@@ -10,13 +10,13 @@ using WalkingTec.Mvvm.Core;
 namespace SchoolManager.Model.BasicInfo
 {
     /// <summary>
-    /// 职称管理
+    /// 职位管理
     /// </summary>
     [Table("basic_position")]
     public class PositionInfo : PersistPoco
     {
         [Key]
-        [Column("positioid")]
+        [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public new int ID { get; set; }
 

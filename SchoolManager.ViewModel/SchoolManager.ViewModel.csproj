@@ -8,6 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolManager.Model\SchoolManager.Model.csproj" />
-  </ItemGroup >
+  </ItemGroup>
 </Project>
 

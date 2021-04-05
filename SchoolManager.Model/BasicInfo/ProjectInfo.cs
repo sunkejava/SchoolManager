@@ -16,7 +16,7 @@ namespace SchoolManager.Model.BasicInfo
     public class ProjectInfo : PersistPoco
     {
         [Key]
-        [Column("projectid")]
+        [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public new int ID { get; set; }
 
@@ -30,5 +30,20 @@ namespace SchoolManager.Model.BasicInfo
         [Required(ErrorMessage = "Validate.{0}required")]
         [StringLength(20, ErrorMessage = "Validate.{0}stringmax{1}")]
         public string Name { get; set; }
+
+        [Display(Name = "Column.TypeOfProjectEnum")]
+        [Required(ErrorMessage = "Validate.{0}required")]
+        public TypeOfProjectEnum TypeOfProject { get; set; }
+    }
+
+    /// <summary>
+    /// 类型
+    /// </summary>
+    public enum TypeOfProjectEnum
+    {
+        [Display(Name = "教师")]
+        Teacher,
+        [Display(Name = "学生")]
+        Student,
     }
 }

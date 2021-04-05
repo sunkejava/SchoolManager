@@ -5,27 +5,28 @@ using System.Linq;
 using WalkingTec.Mvvm.Core;
 using WalkingTec.Mvvm.Core.Extensions;
 using WalkingTec.Mvvm.Mvc;
-using SchoolManager.ViewModel._Business.StudentInfoVMs;
-using SchoolManager.Model.Business;
+using SchoolManager.ViewModel._Common.MajorManagerVMs;
+using SchoolManager.Model.MajorMiddleInfo;
 using SchoolManager.Model.BasicInfo;
+using SchoolManager.Model.Business;
 
 
 namespace SchoolManager.Controllers
 {
-    [Area("_Business")]
+    [Area("_Common")]
     [AuthorizeJwtWithCookie]
-    [ActionDescription("学生信息")]
+    [ActionDescription("奖惩处理")]
     [ApiController]
-    [Route("api/StudentInfo")]
-	public partial class StudentInfoController : BaseApiController
+    [Route("api/MajorManager")]
+	public partial class MajorManagerController : BaseApiController
     {
         [ActionDescription("Sys.Search")]
         [HttpPost("Search")]
-		public IActionResult Search(StudentInfoSearcher searcher)
+		public IActionResult Search(MajorManagerSearcher searcher)
         {
             if (ModelState.IsValid)
             {
-                var vm = Wtm.CreateVM<StudentInfoListVM>();
+                var vm = Wtm.CreateVM<MajorManagerListVM>();
                 vm.Searcher = searcher;
                 return Content(vm.GetJson());
             }
@@ -37,15 +38,15 @@ namespace SchoolManager.Controllers
 
         [ActionDescription("Sys.Get")]
         [HttpGet("{id}")]
-        public StudentInfoVM Get(string id)
+        public MajorManagerVM Get(string id)
         {
-            var vm = Wtm.CreateVM<StudentInfoVM>(id);
+            var vm = Wtm.CreateVM<MajorManagerVM>(id);
             return vm;
         }
 
         [ActionDescription("Sys.Create")]
         [HttpPost("Add")]
-        public IActionResult Add(StudentInfoVM vm)
+        public IActionResult Add(MajorManagerVM vm)
         {
             if (!ModelState.IsValid)
             {
@@ -68,7 +69,7 @@ namespace SchoolManager.Controllers
 
         [ActionDescription("Sys.Edit")]
         [HttpPut("Edit")]
-        public IActionResult Edit(StudentInfoVM vm)
+        public IActionResult Edit(MajorManagerVM vm)
         {
             if (!ModelState.IsValid)
             {
@@ -92,7 +93,7 @@ namespace SchoolManager.Controllers
         [ActionDescription("Sys.Delete")]
         public IActionResult BatchDelete(string[] ids)
         {
-            var vm = Wtm.CreateVM<StudentInfoBatchVM>();
+            var vm = Wtm.CreateVM<MajorManagerBatchVM>();
             if (ids != null && ids.Count() > 0)
             {
                 vm.Ids = ids;
@@ -114,9 +115,9 @@ namespace SchoolManager.Controllers
 
         [ActionDescription("Sys.Export")]
         [HttpPost("ExportExcel")]
-        public IActionResult ExportExcel(StudentInfoSearcher searcher)
+        public IActionResult ExportExcel(MajorManagerSearcher searcher)
         {
-            var vm = Wtm.CreateVM<StudentInfoListVM>();
+            var vm = Wtm.CreateVM<MajorManagerListVM>();
             vm.Searcher = searcher;
             vm.SearcherMode = ListVMSearchModeEnum.Export;
             return vm.GetExportData();
@@ -126,7 +127,7 @@ namespace SchoolManager.Controllers
         [HttpPost("ExportExcelByIds")]
         public IActionResult ExportExcelByIds(string[] ids)
         {
-            var vm = Wtm.CreateVM<StudentInfoListVM>();
+            var vm = Wtm.CreateVM<MajorManagerListVM>();
             if (ids != null && ids.Count() > 0)
             {
                 vm.Ids = new List<string>(ids);
@@ -139,7 +140,7 @@ namespace SchoolManager.Controllers
         [HttpGet("GetExcelTemplate")]
         public IActionResult GetExcelTemplate()
         {
-            var vm = Wtm.CreateVM<StudentInfoImportVM>();
+            var vm = Wtm.CreateVM<MajorManagerImportVM>();
             var qs = new Dictionary<string, string>();
             foreach (var item in Request.Query.Keys)
             {
@@ -152,7 +153,7 @@ namespace SchoolManager.Controllers
 
         [ActionDescription("Sys.Import")]
         [HttpPost("Import")]
-        public ActionResult Import(StudentInfoImportVM vm)
+        public ActionResult Import(MajorManagerImportVM vm)
         {
 
             if (vm.ErrorListVM.EntityList.Count > 0 || !vm.BatchSaveData())
@@ -172,28 +173,10 @@ namespace SchoolManager.Controllers
             return Ok(DC.Set<HonorInfo>().GetSelectListItems(Wtm, x => x.Name));
         }
 
-        [HttpGet("GetSubjectInfos")]
-        public ActionResult GetSubjectInfos()
+        [HttpGet("GetStudentInfos")]
+        public ActionResult GetStudentInfos()
         {
-            return Ok(DC.Set<SubjectInfo>().GetSelectListItems(Wtm, x => x.Name));
-        }
-
-        [HttpGet("GetSchoolInfos")]
-        public ActionResult GetSchoolInfos()
-        {
-            return Ok(DC.Set<SchoolInfo>().GetSelectListItems(Wtm, x => x.Name));
-        }
-
-        [HttpGet("GetMajorInfos")]
-        public ActionResult GetMajorInfos()
-        {
-            return Ok(DC.Set<MajorInfo>().GetSelectListItems(Wtm, x => x.Name));
-        }
-
-        [HttpGet("GetGradeClassInfos")]
-        public ActionResult GetGradeClassInfos()
-        {
-            return Ok(DC.Set<GradeClassInfo>().GetSelectListItems(Wtm, x => x.Name));
+            return Ok(DC.Set<StudentInfo>().GetSelectListItems(Wtm, x => x.Name));
         }
 
     }

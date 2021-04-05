@@ -22,7 +22,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("divisionid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -68,7 +68,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("GradeClassId");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -113,7 +113,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("gradeid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -152,7 +152,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("honorid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -174,6 +174,9 @@ namespace SchoolManager.DataAccess.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4");
 
+                    b.Property<int>("TypeOfHonor")
+                        .HasColumnType("int");
+
                     b.Property<string>("UpdateBy")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
@@ -191,7 +194,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -230,7 +233,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("positioid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -269,7 +272,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("projectid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -291,6 +294,9 @@ namespace SchoolManager.DataAccess.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4");
 
+                    b.Property<int>("TypeOfProject")
+                        .HasColumnType("int");
+
                     b.Property<string>("UpdateBy")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
@@ -308,7 +314,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("SchoolInfoId");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Address")
                         .HasMaxLength(100)
@@ -384,7 +390,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("subjectid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -423,7 +429,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("titleid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -462,7 +468,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("id");
+                        .HasColumnName("ID");
 
                     b.Property<string>("CellPhone")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -530,6 +536,228 @@ namespace SchoolManager.DataAccess.Migrations
                     b.HasIndex("SchoolInfoId");
 
                     b.ToTable("common_student");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherInfo", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("ID");
+
+                    b.Property<string>("CellPhone")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("varchar(6) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("EmConPhone")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("EmContacts")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("GradeClassId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("InTake")
+                        .IsRequired()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("MajorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MajorInfoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<Guid?>("PhotoId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("PositionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SchoolInfoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TitleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("ZipCode")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("GradeClassId");
+
+                    b.HasIndex("MajorId");
+
+                    b.HasIndex("MajorInfoId");
+
+                    b.HasIndex("PhotoId");
+
+                    b.HasIndex("PositionId");
+
+                    b.HasIndex("SchoolInfoId");
+
+                    b.HasIndex("TitleId");
+
+                    b.ToTable("common_teacher");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherMajorManager", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("HonorId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("HonorId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Middle_TeacherMajorManager");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherProjectManager", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Middle_TeacherProjectManager");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.MajorManager", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("HonorId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("HonorId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Middle_MajorManager");
                 });
 
             modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.StudentHonor", b =>
@@ -600,6 +828,111 @@ namespace SchoolManager.DataAccess.Migrations
                     b.HasIndex("SubjectId");
 
                     b.ToTable("Middle_StudentSubject");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.TeacherHonor", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("HonorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("HonorId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Middle_TeacherHonor");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.TeacherProject", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Middle_TeacherProject");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.TeacherSubject", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("SubjectId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Middle_TeacherSubject");
                 });
 
             modelBuilder.Entity("WalkingTec.Mvvm.Core.ActionLog", b =>
@@ -1134,6 +1467,120 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Navigation("SchoolInfo");
                 });
 
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherInfo", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.GradeClassInfo", "GradeClass")
+                        .WithMany()
+                        .HasForeignKey("GradeClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.BasicInfo.MajorInfo", "Major")
+                        .WithMany()
+                        .HasForeignKey("MajorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.BasicInfo.MajorInfo", "MajorInfo")
+                        .WithMany()
+                        .HasForeignKey("MajorInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WalkingTec.Mvvm.Core.FileAttachment", "Photo")
+                        .WithMany()
+                        .HasForeignKey("PhotoId");
+
+                    b.HasOne("SchoolManager.Model.BasicInfo.PositionInfo", "Position")
+                        .WithMany()
+                        .HasForeignKey("PositionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.BasicInfo.SchoolInfo", "SchoolInfo")
+                        .WithMany()
+                        .HasForeignKey("SchoolInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.BasicInfo.TitleInfo", "Title")
+                        .WithMany()
+                        .HasForeignKey("TitleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GradeClass");
+
+                    b.Navigation("Major");
+
+                    b.Navigation("MajorInfo");
+
+                    b.Navigation("Photo");
+
+                    b.Navigation("Position");
+
+                    b.Navigation("SchoolInfo");
+
+                    b.Navigation("Title");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherMajorManager", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.HonorInfo", "Honor")
+                        .WithMany()
+                        .HasForeignKey("HonorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.TeacherInfo", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Honor");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherProjectManager", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.ProjectInfo", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.TeacherInfo", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.MajorManager", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.HonorInfo", "Honor")
+                        .WithMany()
+                        .HasForeignKey("HonorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.StudentInfo", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Honor");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.StudentHonor", b =>
                 {
                     b.HasOne("SchoolManager.Model.BasicInfo.HonorInfo", "Honor")
@@ -1172,6 +1619,63 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.TeacherHonor", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.HonorInfo", "Honor")
+                        .WithMany()
+                        .HasForeignKey("HonorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.TeacherInfo", "Teacher")
+                        .WithMany("StudentHonors")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Honor");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.TeacherProject", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.ProjectInfo", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.TeacherInfo", "Teacher")
+                        .WithMany("TeacherProjects")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.TeacherSubject", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.SubjectInfo", "Subject")
+                        .WithMany()
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.TeacherInfo", "Teacher")
+                        .WithMany("StudentSubjects")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Subject");
+
+                    b.Navigation("Teacher");
+                });
+
             modelBuilder.Entity("WalkingTec.Mvvm.Core.FrameworkMenu", b =>
                 {
                     b.HasOne("WalkingTec.Mvvm.Core.FrameworkMenu", "Parent")
@@ -1206,6 +1710,15 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Navigation("StudentHonors");
 
                     b.Navigation("StudentSubjects");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.Business.TeacherInfo", b =>
+                {
+                    b.Navigation("StudentHonors");
+
+                    b.Navigation("StudentSubjects");
+
+                    b.Navigation("TeacherProjects");
                 });
 
             modelBuilder.Entity("WalkingTec.Mvvm.Core.FrameworkMenu", b =>

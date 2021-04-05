@@ -38,9 +38,9 @@ namespace SchoolManager.Test
             SubjectInfoVM vm = _controller.Wtm.CreateVM<SubjectInfoVM>();
             SubjectInfo v = new SubjectInfo();
             
-            v.ID = 56;
-            v.Code = "6qcCQNHhv";
-            v.Name = "LgW1HXAB";
+            v.ID = 54;
+            v.Code = "nDlt79A";
+            v.Name = "9KTUiITG";
             vm.Entity = v;
             var rv = _controller.Add(vm);
             Assert.IsInstanceOfType(rv, typeof(OkObjectResult));
@@ -49,9 +49,9 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<SubjectInfo>().Find(v.ID);
                 
-                Assert.AreEqual(data.ID, 56);
-                Assert.AreEqual(data.Code, "6qcCQNHhv");
-                Assert.AreEqual(data.Name, "LgW1HXAB");
+                Assert.AreEqual(data.ID, 54);
+                Assert.AreEqual(data.Code, "nDlt79A");
+                Assert.AreEqual(data.Name, "9KTUiITG");
                 Assert.AreEqual(data.CreateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.CreateTime.Value).Seconds < 10);
             }
@@ -64,9 +64,9 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
        			
-                v.ID = 56;
-                v.Code = "6qcCQNHhv";
-                v.Name = "LgW1HXAB";
+                v.ID = 54;
+                v.Code = "nDlt79A";
+                v.Name = "9KTUiITG";
                 context.Set<SubjectInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -76,8 +76,8 @@ namespace SchoolManager.Test
             v = new SubjectInfo();
             v.ID = oldID;
        		
-            v.Code = "JmC7j";
-            v.Name = "8ijcjM3j";
+            v.Code = "zwbHg8";
+            v.Name = "K9arMwfyt";
             vm.Entity = v;
             vm.FC = new Dictionary<string, object>();
 			
@@ -91,8 +91,8 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<SubjectInfo>().Find(v.ID);
  				
-                Assert.AreEqual(data.Code, "JmC7j");
-                Assert.AreEqual(data.Name, "8ijcjM3j");
+                Assert.AreEqual(data.Code, "zwbHg8");
+                Assert.AreEqual(data.Name, "K9arMwfyt");
                 Assert.AreEqual(data.UpdateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.UpdateTime.Value).Seconds < 10);
             }
@@ -106,9 +106,9 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
         		
-                v.ID = 56;
-                v.Code = "6qcCQNHhv";
-                v.Name = "LgW1HXAB";
+                v.ID = 54;
+                v.Code = "nDlt79A";
+                v.Name = "9KTUiITG";
                 context.Set<SubjectInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -124,12 +124,12 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 				
-                v1.ID = 56;
-                v1.Code = "6qcCQNHhv";
-                v1.Name = "LgW1HXAB";
-                v2.ID = 57;
-                v2.Code = "JmC7j";
-                v2.Name = "8ijcjM3j";
+                v1.ID = 54;
+                v1.Code = "nDlt79A";
+                v1.Name = "9KTUiITG";
+                v2.ID = 31;
+                v2.Code = "zwbHg8";
+                v2.Name = "K9arMwfyt";
                 context.Set<SubjectInfo>().Add(v1);
                 context.Set<SubjectInfo>().Add(v2);
                 context.SaveChanges();

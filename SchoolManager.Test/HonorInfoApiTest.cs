@@ -38,9 +38,10 @@ namespace SchoolManager.Test
             HonorInfoVM vm = _controller.Wtm.CreateVM<HonorInfoVM>();
             HonorInfo v = new HonorInfo();
             
-            v.ID = 30;
-            v.Code = "aRQqBKB";
-            v.Name = "S4GbWITBk";
+            v.ID = 19;
+            v.Code = "G4QoS";
+            v.Name = "LkW1p";
+            v.TypeOfHonor = SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student;
             vm.Entity = v;
             var rv = _controller.Add(vm);
             Assert.IsInstanceOfType(rv, typeof(OkObjectResult));
@@ -49,9 +50,10 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<HonorInfo>().Find(v.ID);
                 
-                Assert.AreEqual(data.ID, 30);
-                Assert.AreEqual(data.Code, "aRQqBKB");
-                Assert.AreEqual(data.Name, "S4GbWITBk");
+                Assert.AreEqual(data.ID, 19);
+                Assert.AreEqual(data.Code, "G4QoS");
+                Assert.AreEqual(data.Name, "LkW1p");
+                Assert.AreEqual(data.TypeOfHonor, SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student);
                 Assert.AreEqual(data.CreateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.CreateTime.Value).Seconds < 10);
             }
@@ -64,9 +66,10 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
        			
-                v.ID = 30;
-                v.Code = "aRQqBKB";
-                v.Name = "S4GbWITBk";
+                v.ID = 19;
+                v.Code = "G4QoS";
+                v.Name = "LkW1p";
+                v.TypeOfHonor = SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student;
                 context.Set<HonorInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -76,14 +79,16 @@ namespace SchoolManager.Test
             v = new HonorInfo();
             v.ID = oldID;
        		
-            v.Code = "9eU6bkjSA";
-            v.Name = "wWha";
+            v.Code = "dDu4j";
+            v.Name = "Y5nKI";
+            v.TypeOfHonor = SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student;
             vm.Entity = v;
             vm.FC = new Dictionary<string, object>();
 			
             vm.FC.Add("Entity.ID", "");
             vm.FC.Add("Entity.Code", "");
             vm.FC.Add("Entity.Name", "");
+            vm.FC.Add("Entity.TypeOfHonor", "");
             var rv = _controller.Edit(vm);
             Assert.IsInstanceOfType(rv, typeof(OkObjectResult));
 
@@ -91,8 +96,9 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<HonorInfo>().Find(v.ID);
  				
-                Assert.AreEqual(data.Code, "9eU6bkjSA");
-                Assert.AreEqual(data.Name, "wWha");
+                Assert.AreEqual(data.Code, "dDu4j");
+                Assert.AreEqual(data.Name, "Y5nKI");
+                Assert.AreEqual(data.TypeOfHonor, SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student);
                 Assert.AreEqual(data.UpdateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.UpdateTime.Value).Seconds < 10);
             }
@@ -106,9 +112,10 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
         		
-                v.ID = 30;
-                v.Code = "aRQqBKB";
-                v.Name = "S4GbWITBk";
+                v.ID = 19;
+                v.Code = "G4QoS";
+                v.Name = "LkW1p";
+                v.TypeOfHonor = SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student;
                 context.Set<HonorInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -124,12 +131,14 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 				
-                v1.ID = 30;
-                v1.Code = "aRQqBKB";
-                v1.Name = "S4GbWITBk";
-                v2.ID = 83;
-                v2.Code = "9eU6bkjSA";
-                v2.Name = "wWha";
+                v1.ID = 19;
+                v1.Code = "G4QoS";
+                v1.Name = "LkW1p";
+                v1.TypeOfHonor = SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student;
+                v2.ID = 11;
+                v2.Code = "dDu4j";
+                v2.Name = "Y5nKI";
+                v2.TypeOfHonor = SchoolManager.Model.BasicInfo.TypeOfHonorEnum.Student;
                 context.Set<HonorInfo>().Add(v1);
                 context.Set<HonorInfo>().Add(v2);
                 context.SaveChanges();

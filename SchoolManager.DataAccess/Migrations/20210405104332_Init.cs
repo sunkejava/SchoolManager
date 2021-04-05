@@ -36,7 +36,7 @@ namespace SchoolManager.DataAccess.Migrations
                 name: "basic_divisions",
                 columns: table => new
                 {
-                    divisionid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     ParentCode = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
@@ -50,14 +50,14 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_divisions", x => x.divisionid);
+                    table.PrimaryKey("PK_basic_divisions", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_grades",
                 columns: table => new
                 {
-                    gradeid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
@@ -69,17 +69,18 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_grades", x => x.gradeid);
+                    table.PrimaryKey("PK_basic_grades", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_honors",
                 columns: table => new
                 {
-                    honorid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
+                    TypeOfHonor = table.Column<int>(type: "int", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     CreateBy = table.Column<string>(type: "varchar(50) CHARACTER SET utf8mb4", maxLength: 50, nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
@@ -88,14 +89,14 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_honors", x => x.honorid);
+                    table.PrimaryKey("PK_basic_honors", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_major",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
@@ -107,14 +108,14 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_major", x => x.Id);
+                    table.PrimaryKey("PK_basic_major", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_position",
                 columns: table => new
                 {
-                    positioid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
@@ -126,17 +127,18 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_position", x => x.positioid);
+                    table.PrimaryKey("PK_basic_position", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_projects",
                 columns: table => new
                 {
-                    projectid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
+                    TypeOfProject = table.Column<int>(type: "int", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     CreateBy = table.Column<string>(type: "varchar(50) CHARACTER SET utf8mb4", maxLength: 50, nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
@@ -145,14 +147,14 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_projects", x => x.projectid);
+                    table.PrimaryKey("PK_basic_projects", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_schools",
                 columns: table => new
                 {
-                    SchoolInfoId = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(11) CHARACTER SET utf8mb4", maxLength: 11, nullable: false),
                     Name = table.Column<string>(type: "varchar(50) CHARACTER SET utf8mb4", maxLength: 50, nullable: false),
@@ -173,14 +175,14 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_schools", x => x.SchoolInfoId);
+                    table.PrimaryKey("PK_basic_schools", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_subject",
                 columns: table => new
                 {
-                    subjectid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
@@ -192,14 +194,14 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_subject", x => x.subjectid);
+                    table.PrimaryKey("PK_basic_subject", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "basic_titles",
                 columns: table => new
                 {
-                    titleid = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     Name = table.Column<string>(type: "varchar(20) CHARACTER SET utf8mb4", maxLength: 20, nullable: false),
@@ -211,7 +213,7 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_titles", x => x.titleid);
+                    table.PrimaryKey("PK_basic_titles", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -378,7 +380,7 @@ namespace SchoolManager.DataAccess.Migrations
                 name: "basic_gradeclasss",
                 columns: table => new
                 {
-                    GradeClassId = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Code = table.Column<string>(type: "varchar(12) CHARACTER SET utf8mb4", maxLength: 12, nullable: false),
                     GradeId = table.Column<int>(type: "int", nullable: false),
@@ -391,12 +393,12 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_basic_gradeclasss", x => x.GradeClassId);
+                    table.PrimaryKey("PK_basic_gradeclasss", x => x.ID);
                     table.ForeignKey(
                         name: "FK_basic_gradeclasss_basic_grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "basic_grades",
-                        principalColumn: "gradeid",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -461,7 +463,7 @@ namespace SchoolManager.DataAccess.Migrations
                 name: "common_student",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     InTake = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
@@ -482,24 +484,24 @@ namespace SchoolManager.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_common_student", x => x.id);
+                    table.PrimaryKey("PK_common_student", x => x.ID);
                     table.ForeignKey(
                         name: "FK_common_student_basic_gradeclasss_GradeClassId",
                         column: x => x.GradeClassId,
                         principalTable: "basic_gradeclasss",
-                        principalColumn: "GradeClassId",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_common_student_basic_major_MajorInfoId",
                         column: x => x.MajorInfoId,
                         principalTable: "basic_major",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_common_student_basic_schools_SchoolInfoId",
                         column: x => x.SchoolInfoId,
                         principalTable: "basic_schools",
-                        principalColumn: "SchoolInfoId",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_common_student_FileAttachments_PhotoId",
@@ -507,6 +509,39 @@ namespace SchoolManager.DataAccess.Migrations
                         principalTable: "FileAttachments",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Middle_MajorManager",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    StartDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    HonorId = table.Column<int>(type: "int", nullable: false),
+                    StudentId = table.Column<int>(type: "int", nullable: false),
+                    CreateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    CreateBy = table.Column<string>(type: "varchar(50) CHARACTER SET utf8mb4", maxLength: 50, nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    UpdateBy = table.Column<string>(type: "varchar(50) CHARACTER SET utf8mb4", maxLength: 50, nullable: true),
+                    IsValid = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Middle_MajorManager", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Middle_MajorManager_basic_honors_HonorId",
+                        column: x => x.HonorId,
+                        principalTable: "basic_honors",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Middle_MajorManager_common_student_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "common_student",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -528,13 +563,13 @@ namespace SchoolManager.DataAccess.Migrations
                         name: "FK_Middle_StudentHonor_basic_honors_HonorId",
                         column: x => x.HonorId,
                         principalTable: "basic_honors",
-                        principalColumn: "honorid",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Middle_StudentHonor_common_student_StudentId",
                         column: x => x.StudentId,
                         principalTable: "common_student",
-                        principalColumn: "id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -557,13 +592,13 @@ namespace SchoolManager.DataAccess.Migrations
                         name: "FK_Middle_StudentSubject_basic_subject_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "basic_subject",
-                        principalColumn: "subjectid",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Middle_StudentSubject_common_student_StudentId",
                         column: x => x.StudentId,
                         principalTable: "common_student",
-                        principalColumn: "id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -606,6 +641,16 @@ namespace SchoolManager.DataAccess.Migrations
                 name: "IX_FunctionPrivileges_MenuItemId",
                 table: "FunctionPrivileges",
                 column: "MenuItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Middle_MajorManager_HonorId",
+                table: "Middle_MajorManager",
+                column: "HonorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Middle_MajorManager_StudentId",
+                table: "Middle_MajorManager",
+                column: "StudentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Middle_StudentHonor_HonorId",
@@ -665,6 +710,9 @@ namespace SchoolManager.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "FunctionPrivileges");
+
+            migrationBuilder.DropTable(
+                name: "Middle_MajorManager");
 
             migrationBuilder.DropTable(
                 name: "Middle_StudentHonor");

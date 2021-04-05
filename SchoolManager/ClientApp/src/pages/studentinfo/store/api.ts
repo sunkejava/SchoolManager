@@ -54,16 +54,6 @@ const imported = {
   method: "post"
 };
 
-const getMajorInfo = {
-  url: reqPath + "getMajorInfos",
-  method: "get",
-  dataType: "array"
-}; 
-const getGradeClassInfo = {
-  url: reqPath + "getGradeClassInfos",
-  method: "get",
-  dataType: "array"
-}; 
 const getHonorInfo = {
   url: reqPath + "getHonorInfos",
   method: "get",
@@ -79,13 +69,23 @@ const getSchoolInfo = {
   method: "get",
   dataType: "array"
 }; 
+const getMajorInfo = {
+  url: reqPath + "getMajorInfos",
+  method: "get",
+  dataType: "array"
+}; 
+const getGradeClassInfo = {
+  url: reqPath + "getGradeClassInfos",
+  method: "get",
+  dataType: "array"
+}; 
 
 export default {
-getMajorInfo,
-getGradeClassInfo,
 getHonorInfo,
 getSubjectInfo,
 getSchoolInfo,
+getMajorInfo,
+getGradeClassInfo,
 
   search,
   add,

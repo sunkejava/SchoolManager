@@ -5,22 +5,20 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using WalkingTec.Mvvm.Core;
 using WalkingTec.Mvvm.Core.Extensions;
-using SchoolManager.Model.Business;
+using SchoolManager.Model.MajorMiddleInfo;
 using SchoolManager.Model.BasicInfo;
+using SchoolManager.Model.Business;
 
 
-namespace SchoolManager.ViewModel._Business.StudentInfoVMs
+namespace SchoolManager.ViewModel._Common.MajorManagerVMs
 {
-    public partial class StudentInfoVM : BaseCRUDVM<StudentInfo>
+    public partial class MajorManagerVM : BaseCRUDVM<MajorManager>
     {
 
-        public StudentInfoVM()
+        public MajorManagerVM()
         {
-            SetInclude(x => x.StudentHonors);
-            SetInclude(x => x.StudentSubjects);
-            SetInclude(x => x.SchoolInfo);
-            SetInclude(x => x.MajorInfo);
-            SetInclude(x => x.GradeClass);
+            SetInclude(x => x.Honor);
+            SetInclude(x => x.Student);
         }
 
         protected override void InitVM()

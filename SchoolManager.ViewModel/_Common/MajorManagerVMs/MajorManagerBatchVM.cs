@@ -5,17 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using WalkingTec.Mvvm.Core;
 using WalkingTec.Mvvm.Core.Extensions;
-using SchoolManager.Model.Business;
+using SchoolManager.Model.MajorMiddleInfo;
 
 
-namespace SchoolManager.ViewModel._Business.StudentInfoVMs
+namespace SchoolManager.ViewModel._Common.MajorManagerVMs
 {
-    public partial class StudentInfoBatchVM : BaseBatchVM<StudentInfo, StudentInfo_BatchEdit>
+    public partial class MajorManagerBatchVM : BaseBatchVM<MajorManager, MajorManager_BatchEdit>
     {
-        public StudentInfoBatchVM()
+        public MajorManagerBatchVM()
         {
-            ListVM = new StudentInfoListVM();
-            LinkedVM = new StudentInfo_BatchEdit();
+            ListVM = new MajorManagerListVM();
+            LinkedVM = new MajorManager_BatchEdit();
         }
 
     }
@@ -23,7 +23,7 @@ namespace SchoolManager.ViewModel._Business.StudentInfoVMs
 	/// <summary>
     /// Class to define batch edit fields
     /// </summary>
-    public class StudentInfo_BatchEdit : BaseVM
+    public class MajorManager_BatchEdit : BaseVM
     {
 
         protected override void InitVM()

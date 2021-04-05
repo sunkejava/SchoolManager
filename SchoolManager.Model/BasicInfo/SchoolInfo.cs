@@ -16,7 +16,7 @@ namespace SchoolManager.Model.BasicInfo
     public class SchoolInfo: PersistPoco
     {
         [Key]
-        [Column("SchoolInfoId")]
+        [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public new int ID { get; set; }
 

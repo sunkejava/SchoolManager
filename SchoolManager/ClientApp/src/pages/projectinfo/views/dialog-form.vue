@@ -9,7 +9,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { Action, State } from "vuex-class";
 import formMixin from "@/vue-custom/mixin/form-mixin";
 import UploadImg from "@/components/page/UploadImg.vue";
-
+import { TypeOfProjectTypes } from "../config";
 
 @Component({
     mixins: [formMixin()]
@@ -30,14 +30,23 @@ export default class Index extends Vue {
                     isHidden: true
                 },
              "Entity.Code":{
-                 label: "编码",
-                 rules: [{ required: true, message: "编码"+this.$t("form.notnull"),trigger: "blur" }],
+                 label: "代码",
+                 rules: [{ required: true, message: "代码"+this.$t("form.notnull"),trigger: "blur" }],
                     type: "input"
             },
              "Entity.Name":{
                  label: "名称",
                  rules: [{ required: true, message: "名称"+this.$t("form.notnull"),trigger: "blur" }],
                     type: "input"
+            },
+             "Entity.TypeOfProject":{
+                 label: "项目类型",
+                 rules: [{ required: true, message: "项目类型"+this.$t("form.notnull"),trigger: "blur" }],
+                    type: "select",
+                    children: TypeOfProjectTypes,
+                    props: {
+                        clearable: true
+                    }
             }
                 
             }

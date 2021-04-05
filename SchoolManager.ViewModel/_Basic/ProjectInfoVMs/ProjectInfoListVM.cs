@@ -19,6 +19,7 @@ namespace SchoolManager.ViewModel._Basic.ProjectInfoVMs
             return new List<GridColumn<ProjectInfo_View>>{
                 this.MakeGridHeader(x => x.Code),
                 this.MakeGridHeader(x => x.Name),
+                this.MakeGridHeader(x => x.TypeOfProject),
                 this.MakeGridHeaderAction(width: 200)
             };
         }
@@ -28,11 +29,13 @@ namespace SchoolManager.ViewModel._Basic.ProjectInfoVMs
             var query = DC.Set<ProjectInfo>()
                 .CheckContain(Searcher.Code, x=>x.Code)
                 .CheckContain(Searcher.Name, x=>x.Name)
+                .CheckEqual(Searcher.TypeOfProject, x=>x.TypeOfProject)
                 .Select(x => new ProjectInfo_View
                 {
 				    ID = x.ID,
                     Code = x.Code,
                     Name = x.Name,
+                    TypeOfProject = x.TypeOfProject,
                 })
                 .OrderBy(x => x.ID);
             return query;

@@ -38,18 +38,18 @@ namespace SchoolManager.Test
             SchoolInfoVM vm = _controller.Wtm.CreateVM<SchoolInfoVM>();
             SchoolInfo v = new SchoolInfo();
             
-            v.ID = 59;
-            v.Code = "y79oUK1sV";
-            v.Name = "iACTwL8C8";
-            v.EnglishName = "o77oL";
-            v.PinyinName = "XGLn";
-            v.SimplePinyinName = "jnRddCcIV";
-            v.SimpleName = "Ji8zAsg";
-            v.Contacts = "JOO";
-            v.Phone = "zJdd";
-            v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY;
-            v.Address = "5C1HL";
-            v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ;
+            v.ID = 79;
+            v.Code = "hKt";
+            v.Name = "hElacNXg";
+            v.EnglishName = "k1b";
+            v.PinyinName = "SisFz37Ec";
+            v.SimplePinyinName = "zzB2vl";
+            v.SimpleName = "s6klLEy";
+            v.Contacts = "d9VT";
+            v.Phone = "bn15";
+            v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.CDJY;
+            v.Address = "BVMW";
+            v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.XZXQ;
             vm.Entity = v;
             var rv = _controller.Add(vm);
             Assert.IsInstanceOfType(rv, typeof(OkObjectResult));
@@ -58,18 +58,18 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<SchoolInfo>().Find(v.ID);
                 
-                Assert.AreEqual(data.ID, 59);
-                Assert.AreEqual(data.Code, "y79oUK1sV");
-                Assert.AreEqual(data.Name, "iACTwL8C8");
-                Assert.AreEqual(data.EnglishName, "o77oL");
-                Assert.AreEqual(data.PinyinName, "XGLn");
-                Assert.AreEqual(data.SimplePinyinName, "jnRddCcIV");
-                Assert.AreEqual(data.SimpleName, "Ji8zAsg");
-                Assert.AreEqual(data.Contacts, "JOO");
-                Assert.AreEqual(data.Phone, "zJdd");
-                Assert.AreEqual(data.TypeOfEducation, SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY);
-                Assert.AreEqual(data.Address, "5C1HL");
-                Assert.AreEqual(data.TypeOfUrbanAndRural, SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ);
+                Assert.AreEqual(data.ID, 79);
+                Assert.AreEqual(data.Code, "hKt");
+                Assert.AreEqual(data.Name, "hElacNXg");
+                Assert.AreEqual(data.EnglishName, "k1b");
+                Assert.AreEqual(data.PinyinName, "SisFz37Ec");
+                Assert.AreEqual(data.SimplePinyinName, "zzB2vl");
+                Assert.AreEqual(data.SimpleName, "s6klLEy");
+                Assert.AreEqual(data.Contacts, "d9VT");
+                Assert.AreEqual(data.Phone, "bn15");
+                Assert.AreEqual(data.TypeOfEducation, SchoolManager.Model.BasicInfo.TypeOfEducationEnum.CDJY);
+                Assert.AreEqual(data.Address, "BVMW");
+                Assert.AreEqual(data.TypeOfUrbanAndRural, SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.XZXQ);
                 Assert.AreEqual(data.CreateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.CreateTime.Value).Seconds < 10);
             }
@@ -82,18 +82,18 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
        			
-                v.ID = 59;
-                v.Code = "y79oUK1sV";
-                v.Name = "iACTwL8C8";
-                v.EnglishName = "o77oL";
-                v.PinyinName = "XGLn";
-                v.SimplePinyinName = "jnRddCcIV";
-                v.SimpleName = "Ji8zAsg";
-                v.Contacts = "JOO";
-                v.Phone = "zJdd";
-                v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY;
-                v.Address = "5C1HL";
-                v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ;
+                v.ID = 79;
+                v.Code = "hKt";
+                v.Name = "hElacNXg";
+                v.EnglishName = "k1b";
+                v.PinyinName = "SisFz37Ec";
+                v.SimplePinyinName = "zzB2vl";
+                v.SimpleName = "s6klLEy";
+                v.Contacts = "d9VT";
+                v.Phone = "bn15";
+                v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.CDJY;
+                v.Address = "BVMW";
+                v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.XZXQ;
                 context.Set<SchoolInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -103,17 +103,17 @@ namespace SchoolManager.Test
             v = new SchoolInfo();
             v.ID = oldID;
        		
-            v.Code = "ee2A";
-            v.Name = "WiEs";
-            v.EnglishName = "KALlJ";
-            v.PinyinName = "hAY1VH";
-            v.SimplePinyinName = "Wvl0aXP";
-            v.SimpleName = "rzWhF4a";
-            v.Contacts = "d5rF";
-            v.Phone = "xEHnfhd4";
-            v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.TSJY;
-            v.Address = "XstyZ";
-            v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ;
+            v.Code = "JrZwTIqa";
+            v.Name = "pyKYAk3T";
+            v.EnglishName = "MGzLN";
+            v.PinyinName = "RcxXTgDP2";
+            v.SimplePinyinName = "5ItGpEmXn";
+            v.SimpleName = "VUEsBmdK";
+            v.Contacts = "DR4q";
+            v.Phone = "DMb0";
+            v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY;
+            v.Address = "mcO6Q";
+            v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.CXJHQ;
             vm.Entity = v;
             vm.FC = new Dictionary<string, object>();
 			
@@ -136,17 +136,17 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<SchoolInfo>().Find(v.ID);
  				
-                Assert.AreEqual(data.Code, "ee2A");
-                Assert.AreEqual(data.Name, "WiEs");
-                Assert.AreEqual(data.EnglishName, "KALlJ");
-                Assert.AreEqual(data.PinyinName, "hAY1VH");
-                Assert.AreEqual(data.SimplePinyinName, "Wvl0aXP");
-                Assert.AreEqual(data.SimpleName, "rzWhF4a");
-                Assert.AreEqual(data.Contacts, "d5rF");
-                Assert.AreEqual(data.Phone, "xEHnfhd4");
-                Assert.AreEqual(data.TypeOfEducation, SchoolManager.Model.BasicInfo.TypeOfEducationEnum.TSJY);
-                Assert.AreEqual(data.Address, "XstyZ");
-                Assert.AreEqual(data.TypeOfUrbanAndRural, SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ);
+                Assert.AreEqual(data.Code, "JrZwTIqa");
+                Assert.AreEqual(data.Name, "pyKYAk3T");
+                Assert.AreEqual(data.EnglishName, "MGzLN");
+                Assert.AreEqual(data.PinyinName, "RcxXTgDP2");
+                Assert.AreEqual(data.SimplePinyinName, "5ItGpEmXn");
+                Assert.AreEqual(data.SimpleName, "VUEsBmdK");
+                Assert.AreEqual(data.Contacts, "DR4q");
+                Assert.AreEqual(data.Phone, "DMb0");
+                Assert.AreEqual(data.TypeOfEducation, SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY);
+                Assert.AreEqual(data.Address, "mcO6Q");
+                Assert.AreEqual(data.TypeOfUrbanAndRural, SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.CXJHQ);
                 Assert.AreEqual(data.UpdateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.UpdateTime.Value).Seconds < 10);
             }
@@ -160,18 +160,18 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
         		
-                v.ID = 59;
-                v.Code = "y79oUK1sV";
-                v.Name = "iACTwL8C8";
-                v.EnglishName = "o77oL";
-                v.PinyinName = "XGLn";
-                v.SimplePinyinName = "jnRddCcIV";
-                v.SimpleName = "Ji8zAsg";
-                v.Contacts = "JOO";
-                v.Phone = "zJdd";
-                v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY;
-                v.Address = "5C1HL";
-                v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ;
+                v.ID = 79;
+                v.Code = "hKt";
+                v.Name = "hElacNXg";
+                v.EnglishName = "k1b";
+                v.PinyinName = "SisFz37Ec";
+                v.SimplePinyinName = "zzB2vl";
+                v.SimpleName = "s6klLEy";
+                v.Contacts = "d9VT";
+                v.Phone = "bn15";
+                v.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.CDJY;
+                v.Address = "BVMW";
+                v.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.XZXQ;
                 context.Set<SchoolInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -187,30 +187,30 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 				
-                v1.ID = 59;
-                v1.Code = "y79oUK1sV";
-                v1.Name = "iACTwL8C8";
-                v1.EnglishName = "o77oL";
-                v1.PinyinName = "XGLn";
-                v1.SimplePinyinName = "jnRddCcIV";
-                v1.SimpleName = "Ji8zAsg";
-                v1.Contacts = "JOO";
-                v1.Phone = "zJdd";
-                v1.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY;
-                v1.Address = "5C1HL";
-                v1.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ;
-                v2.ID = 58;
-                v2.Code = "ee2A";
-                v2.Name = "WiEs";
-                v2.EnglishName = "KALlJ";
-                v2.PinyinName = "hAY1VH";
-                v2.SimplePinyinName = "Wvl0aXP";
-                v2.SimpleName = "rzWhF4a";
-                v2.Contacts = "d5rF";
-                v2.Phone = "xEHnfhd4";
-                v2.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.TSJY;
-                v2.Address = "XstyZ";
-                v2.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.ZCQ;
+                v1.ID = 79;
+                v1.Code = "hKt";
+                v1.Name = "hElacNXg";
+                v1.EnglishName = "k1b";
+                v1.PinyinName = "SisFz37Ec";
+                v1.SimplePinyinName = "zzB2vl";
+                v1.SimpleName = "s6klLEy";
+                v1.Contacts = "d9VT";
+                v1.Phone = "bn15";
+                v1.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.CDJY;
+                v1.Address = "BVMW";
+                v1.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.XZXQ;
+                v2.ID = 19;
+                v2.Code = "JrZwTIqa";
+                v2.Name = "pyKYAk3T";
+                v2.EnglishName = "MGzLN";
+                v2.PinyinName = "RcxXTgDP2";
+                v2.SimplePinyinName = "5ItGpEmXn";
+                v2.SimpleName = "VUEsBmdK";
+                v2.Contacts = "DR4q";
+                v2.Phone = "DMb0";
+                v2.TypeOfEducation = SchoolManager.Model.BasicInfo.TypeOfEducationEnum.XQJY;
+                v2.Address = "mcO6Q";
+                v2.TypeOfUrbanAndRural = SchoolManager.Model.BasicInfo.TypeOfUrbanAndRuralEnum.CXJHQ;
                 context.Set<SchoolInfo>().Add(v1);
                 context.Set<SchoolInfo>().Add(v2);
                 context.SaveChanges();

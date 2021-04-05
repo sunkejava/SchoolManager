@@ -19,6 +19,7 @@ namespace SchoolManager.ViewModel._Basic.HonorInfoVMs
             return new List<GridColumn<HonorInfo_View>>{
                 this.MakeGridHeader(x => x.Code),
                 this.MakeGridHeader(x => x.Name),
+                this.MakeGridHeader(x => x.TypeOfHonor),
                 this.MakeGridHeaderAction(width: 200)
             };
         }
@@ -28,11 +29,13 @@ namespace SchoolManager.ViewModel._Basic.HonorInfoVMs
             var query = DC.Set<HonorInfo>()
                 .CheckContain(Searcher.Code, x=>x.Code)
                 .CheckContain(Searcher.Name, x=>x.Name)
+                .CheckEqual(Searcher.TypeOfHonor, x=>x.TypeOfHonor)
                 .Select(x => new HonorInfo_View
                 {
 				    ID = x.ID,
                     Code = x.Code,
                     Name = x.Name,
+                    TypeOfHonor = x.TypeOfHonor,
                 })
                 .OrderBy(x => x.ID);
             return query;

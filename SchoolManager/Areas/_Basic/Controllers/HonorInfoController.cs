@@ -13,7 +13,7 @@ namespace SchoolManager.Controllers
 {
     [Area("_Basic")]
     [AuthorizeJwtWithCookie]
-    [ActionDescription("荣誉信息")]
+    [ActionDescription("MenuKey.HonorInfo")]
     [ApiController]
     [Route("api/HonorInfo")]
 	public partial class HonorInfoController : BaseApiController

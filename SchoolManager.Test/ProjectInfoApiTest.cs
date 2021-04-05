@@ -38,9 +38,10 @@ namespace SchoolManager.Test
             ProjectInfoVM vm = _controller.Wtm.CreateVM<ProjectInfoVM>();
             ProjectInfo v = new ProjectInfo();
             
-            v.ID = 47;
-            v.Code = "VYZd2SHLr";
-            v.Name = "HjOEbo1";
+            v.ID = 50;
+            v.Code = "8zD";
+            v.Name = "kG7";
+            v.TypeOfProject = SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Teacher;
             vm.Entity = v;
             var rv = _controller.Add(vm);
             Assert.IsInstanceOfType(rv, typeof(OkObjectResult));
@@ -49,9 +50,10 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<ProjectInfo>().Find(v.ID);
                 
-                Assert.AreEqual(data.ID, 47);
-                Assert.AreEqual(data.Code, "VYZd2SHLr");
-                Assert.AreEqual(data.Name, "HjOEbo1");
+                Assert.AreEqual(data.ID, 50);
+                Assert.AreEqual(data.Code, "8zD");
+                Assert.AreEqual(data.Name, "kG7");
+                Assert.AreEqual(data.TypeOfProject, SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Teacher);
                 Assert.AreEqual(data.CreateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.CreateTime.Value).Seconds < 10);
             }
@@ -64,9 +66,10 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
        			
-                v.ID = 47;
-                v.Code = "VYZd2SHLr";
-                v.Name = "HjOEbo1";
+                v.ID = 50;
+                v.Code = "8zD";
+                v.Name = "kG7";
+                v.TypeOfProject = SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Teacher;
                 context.Set<ProjectInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -76,14 +79,16 @@ namespace SchoolManager.Test
             v = new ProjectInfo();
             v.ID = oldID;
        		
-            v.Code = "kSdfSNdm";
-            v.Name = "JYMgCJ02y";
+            v.Code = "b84dLS0";
+            v.Name = "oxiWUh";
+            v.TypeOfProject = SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Student;
             vm.Entity = v;
             vm.FC = new Dictionary<string, object>();
 			
             vm.FC.Add("Entity.ID", "");
             vm.FC.Add("Entity.Code", "");
             vm.FC.Add("Entity.Name", "");
+            vm.FC.Add("Entity.TypeOfProject", "");
             var rv = _controller.Edit(vm);
             Assert.IsInstanceOfType(rv, typeof(OkObjectResult));
 
@@ -91,8 +96,9 @@ namespace SchoolManager.Test
             {
                 var data = context.Set<ProjectInfo>().Find(v.ID);
  				
-                Assert.AreEqual(data.Code, "kSdfSNdm");
-                Assert.AreEqual(data.Name, "JYMgCJ02y");
+                Assert.AreEqual(data.Code, "b84dLS0");
+                Assert.AreEqual(data.Name, "oxiWUh");
+                Assert.AreEqual(data.TypeOfProject, SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Student);
                 Assert.AreEqual(data.UpdateBy, "user");
                 Assert.IsTrue(DateTime.Now.Subtract(data.UpdateTime.Value).Seconds < 10);
             }
@@ -106,9 +112,10 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
         		
-                v.ID = 47;
-                v.Code = "VYZd2SHLr";
-                v.Name = "HjOEbo1";
+                v.ID = 50;
+                v.Code = "8zD";
+                v.Name = "kG7";
+                v.TypeOfProject = SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Teacher;
                 context.Set<ProjectInfo>().Add(v);
                 context.SaveChanges();
             }
@@ -124,12 +131,14 @@ namespace SchoolManager.Test
             using (var context = new DataContext(_seed, DBTypeEnum.Memory))
             {
 				
-                v1.ID = 47;
-                v1.Code = "VYZd2SHLr";
-                v1.Name = "HjOEbo1";
-                v2.ID = 74;
-                v2.Code = "kSdfSNdm";
-                v2.Name = "JYMgCJ02y";
+                v1.ID = 50;
+                v1.Code = "8zD";
+                v1.Name = "kG7";
+                v1.TypeOfProject = SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Teacher;
+                v2.ID = 75;
+                v2.Code = "b84dLS0";
+                v2.Name = "oxiWUh";
+                v2.TypeOfProject = SchoolManager.Model.BasicInfo.TypeOfProjectEnum.Student;
                 context.Set<ProjectInfo>().Add(v1);
                 context.Set<ProjectInfo>().Add(v2);
                 context.SaveChanges();

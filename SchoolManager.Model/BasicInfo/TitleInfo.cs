@@ -11,13 +11,13 @@ namespace SchoolManager.Model.BasicInfo
 {
 
     /// <summary>
-    /// 职位职称信息
+    /// 职称信息
     /// </summary>
     [Table("basic_titles")]
     public class TitleInfo : PersistPoco
     {
         [Key]
-        [Column("titleid")]
+        [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public new int ID { get; set; }
 

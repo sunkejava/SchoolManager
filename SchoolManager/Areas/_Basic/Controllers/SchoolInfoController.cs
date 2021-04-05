@@ -13,7 +13,7 @@ namespace SchoolManager.Controllers
 {
     [Area("_Basic")]
     [AuthorizeJwtWithCookie]
-    [ActionDescription("学校信息")]
+    [ActionDescription("MenuKey.SchoolInfo")]
     [ApiController]
     [Route("api/SchoolInfo")]
 	public partial class SchoolInfoController : BaseApiController

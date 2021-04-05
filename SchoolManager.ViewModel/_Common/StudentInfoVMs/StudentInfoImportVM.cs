@@ -9,7 +9,7 @@ using SchoolManager.Model.Business;
 using SchoolManager.Model.BasicInfo;
 
 
-namespace SchoolManager.ViewModel._Business.StudentInfoVMs
+namespace SchoolManager.ViewModel._Common.StudentInfoVMs
 {
     public partial class StudentInfoTemplateVM : BaseTemplateVM
     {
@@ -37,7 +37,7 @@ namespace SchoolManager.ViewModel._Business.StudentInfoVMs
 	    protected override void InitVM()
         {
             SchoolInfo_Excel.DataType = ColumnDataType.ComboBox;
-            SchoolInfo_Excel.ListItems = DC.Set<SchoolInfo>().GetSelectListItems(Wtm, y => y.Name);
+            SchoolInfo_Excel.ListItems = DC.Set<SchoolInfo>().GetSelectListItems(Wtm, y => y.EnglishName);
             MajorInfo_Excel.DataType = ColumnDataType.ComboBox;
             MajorInfo_Excel.ListItems = DC.Set<MajorInfo>().GetSelectListItems(Wtm, y => y.Name);
             GradeClass_Excel.DataType = ColumnDataType.ComboBox;

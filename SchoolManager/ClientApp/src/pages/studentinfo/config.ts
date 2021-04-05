@@ -48,11 +48,11 @@ export const TABLE_HEADER: Array<object> = [
         label: "联系人电话"
     },
     {
-        key: "Name_view3",
+        key: "EnglishName_view",
         label: "毕业院校"
     },
     {
-        key: "Name_view4",
+        key: "Name_view3",
         label: "专业"
     },
     {
@@ -61,7 +61,7 @@ export const TABLE_HEADER: Array<object> = [
         isSlot: true 
     },
     {
-        key: "Name_view5",
+        key: "Name_view4",
         label: "班级"
     },
   { isOperate: true, label: i18n.t(`table.actions`), actions: ["detail", "edit", "deleted"] } //操作列

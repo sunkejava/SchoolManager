@@ -18,7 +18,7 @@ namespace SchoolManager.Model.Business
     {
 
         [Key]
-        [Column("id")]
+        [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public new int ID { get; set; }
 

@@ -16,6 +16,8 @@ namespace SchoolManager.ViewModel._Basic.ProjectInfoVMs
         public ExcelPropety Code_Excel = ExcelPropety.CreateProperty<ProjectInfo>(x => x.Code);
         [Display(Name = "Column.Name")]
         public ExcelPropety Name_Excel = ExcelPropety.CreateProperty<ProjectInfo>(x => x.Name);
+        [Display(Name = "Column.TypeOfProjectEnum")]
+        public ExcelPropety TypeOfProject_Excel = ExcelPropety.CreateProperty<ProjectInfo>(x => x.TypeOfProject);
 
 	    protected override void InitVM()
         {

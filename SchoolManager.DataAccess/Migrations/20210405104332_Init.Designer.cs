@@ -9,7 +9,7 @@ using SchoolManager.DataAccess;
 namespace SchoolManager.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210403131549_Init")]
+    [Migration("20210405104332_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("divisionid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -70,7 +70,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("GradeClassId");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -115,7 +115,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("gradeid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -154,7 +154,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("honorid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -176,6 +176,9 @@ namespace SchoolManager.DataAccess.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4");
 
+                    b.Property<int>("TypeOfHonor")
+                        .HasColumnType("int");
+
                     b.Property<string>("UpdateBy")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
@@ -193,7 +196,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -232,7 +235,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("positioid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -271,7 +274,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("projectid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -293,6 +296,9 @@ namespace SchoolManager.DataAccess.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4");
 
+                    b.Property<int>("TypeOfProject")
+                        .HasColumnType("int");
+
                     b.Property<string>("UpdateBy")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
@@ -310,7 +316,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("SchoolInfoId");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Address")
                         .HasMaxLength(100)
@@ -386,7 +392,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("subjectid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -425,7 +431,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("titleid");
+                        .HasColumnName("ID");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -464,7 +470,7 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("id");
+                        .HasColumnName("ID");
 
                     b.Property<string>("CellPhone")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -532,6 +538,50 @@ namespace SchoolManager.DataAccess.Migrations
                     b.HasIndex("SchoolInfoId");
 
                     b.ToTable("common_student");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.MajorManager", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("HonorId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdateBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("HonorId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Middle_MajorManager");
                 });
 
             modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.StudentHonor", b =>
@@ -1134,6 +1184,25 @@ namespace SchoolManager.DataAccess.Migrations
                     b.Navigation("Photo");
 
                     b.Navigation("SchoolInfo");
+                });
+
+            modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.MajorManager", b =>
+                {
+                    b.HasOne("SchoolManager.Model.BasicInfo.HonorInfo", "Honor")
+                        .WithMany()
+                        .HasForeignKey("HonorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SchoolManager.Model.Business.StudentInfo", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Honor");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("SchoolManager.Model.MajorMiddleInfo.StudentHonor", b =>

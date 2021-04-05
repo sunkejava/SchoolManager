@@ -252,6 +252,9 @@
   <data name="Column.PinyinName" xml:space="preserve">
     <value>PinyinName</value>
   </data>
+  <data name="Column.Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
   <data name="Column.SchoolName" xml:space="preserve">
     <value>SchoolName</value>
   </data>
@@ -267,8 +270,20 @@
   <data name="Column.Subject" xml:space="preserve">
     <value>Subject</value>
   </data>
+  <data name="Column.Teacher" xml:space="preserve">
+    <value>Teacher</value>
+  </data>
   <data name="Column.TypeOfEducation" xml:space="preserve">
     <value>TypeOfEducation</value>
+  </data>
+  <data name="Column.TypeOfHonorEnum" xml:space="preserve">
+    <value>TypeOfHonorEnum</value>
+  </data>
+  <data name="Column.TypeOfMajorEnum" xml:space="preserve">
+    <value>TypeOfMajorEnum</value>
+  </data>
+  <data name="Column.TypeOfProjectEnum" xml:space="preserve">
+    <value>TypeOfProjectEnum</value>
   </data>
   <data name="Column.TypeOfUrbanAndRural" xml:space="preserve">
     <value>TypeOfUrbanAndRural</value>

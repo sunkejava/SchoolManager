@@ -22,7 +22,7 @@ import actionMixin from "@/vue-custom/mixin/action-mixin";
 import DialogForm from "./views/dialog-form.vue";
 import store from "./store/index";
 // 查询参数, table列 ★★★★★
-import { ASSEMBLIES, TABLE_HEADER,  } from "./config";
+import { ASSEMBLIES, TABLE_HEADER, TypeOfHonorTypes } from "./config";
 import i18n from "@/lang";
 
 @Component({
@@ -44,7 +44,7 @@ export default class Index extends Vue {
             },
             formItem: {
                 "Code":{
-                    label: "编码",
+                    label: "代码",
                     rules: [],
                     type: "input"
               },
@@ -52,6 +52,17 @@ export default class Index extends Vue {
                     label: "名称",
                     rules: [],
                     type: "input"
+              },
+                "TypeOfHonor":{
+                    label: "荣誉类型",
+                    rules: [],
+                    type: "select",
+                    children: TypeOfHonorTypes,
+                    props: {
+                        clearable: true,
+                        placeholder: this.$t("form.all")
+                    }
+                    ,isHidden: !this.isActive
               },
 
             }
