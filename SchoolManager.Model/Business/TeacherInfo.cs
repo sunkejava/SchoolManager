@@ -28,13 +28,6 @@ namespace SchoolManager.Model.Business
         [Display(Name = "Column.Position")]
         public PositionInfo Position { get; set; }
         /// <summary>
-        /// 专业
-        /// </summary>
-        public int MajorId { get; set; }
-
-        [Display(Name = "Column.Major")]
-        public MajorInfo Major { get; set; }
-        /// <summary>
         /// 职称
         /// </summary>
         public int TitleId { get; set; }

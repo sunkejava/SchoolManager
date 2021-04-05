@@ -252,6 +252,9 @@
   <data name="Column.PinyinName" xml:space="preserve">
     <value>全拼名称</value>
   </data>
+  <data name="Column.Position" xml:space="preserve">
+    <value>职位信息</value>
+  </data>
   <data name="Column.Project" xml:space="preserve">
     <value>培训项目</value>
   </data>
@@ -272,6 +275,9 @@
   </data>
   <data name="Column.Teacher" xml:space="preserve">
     <value>教师</value>
+  </data>
+  <data name="Column.Title" xml:space="preserve">
+    <value>职称信息</value>
   </data>
   <data name="Column.TypeOfEducation" xml:space="preserve">
     <value>教育类型</value>

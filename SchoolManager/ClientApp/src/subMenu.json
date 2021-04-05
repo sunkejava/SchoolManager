@@ -113,6 +113,27 @@
     "Text": "奖惩处理",
     "Url": "/majormanager"
     }
+,{
+    "Id": "e0f60c8f-33c4-493b-8d41-d6b4212d19da",
+    "ParentId": null,
+    "Text": "教师信息",
+    "Url": "/teacherinfo"
+    }
+,{
+    "Id": "beb13c52-c03f-45f7-8ed1-d33ba4fde506",
+    "ParentId": null,
+    "Text": "教师奖惩处理",
+    "Url": "/teachermajormanager"
+    }
+,{
+    "Id": "52493de8-fd0e-4bda-be5d-a638dd73bb68",
+    "ParentId": null,
+    "Text": "教师培训项目管理",
+    "Url": "/teacherprojectmanager"
+    }
+
+
+
 
 
 

@@ -110,7 +110,28 @@ export default {
     path: '/majormanager',
     controller: 'SchoolManager.Controllers,MajorManager'
     }
+
+, teacherinfo: {
+    name: '教师信息',
+    path: '/teacherinfo',
+    controller: 'SchoolManager.Controllers,TeacherInfo'
+    }
+
+, teachermajormanager: {
+    name: '教师奖惩处理',
+    path: '/teachermajormanager',
+    controller: 'SchoolManager.Controllers,TeacherMajorManager'
+    }
+
+, teacherprojectmanager: {
+    name: '教师培训项目管理',
+    path: '/teacherprojectmanager',
+    controller: 'SchoolManager.Controllers,TeacherProjectManager'
+    }
 /**WTM**/
+ 
+ 
+ 
  
  
  
