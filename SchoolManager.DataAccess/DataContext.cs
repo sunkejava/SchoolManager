@@ -229,7 +229,7 @@ namespace SchoolManager.DataAccess
     {
         public DataContext CreateDbContext(string[] args)
         {
-            return new DataContext("server=192.168.1.105;database=school_db2;user=root;pwd=123456", DBTypeEnum.MySql);
+            return new DataContext("server=127.0.0.1;database=school_db2;user=root;pwd=123456", DBTypeEnum.MySql);
         }
     }
 

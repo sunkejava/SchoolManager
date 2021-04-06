@@ -397,7 +397,7 @@
     <value>菜单管理</value>
   </data>
   <data name="MenuKey.Position" xml:space="preserve">
-    <value>职称管理</value>
+    <value>职位管理</value>
   </data>
   <data name="MenuKey.ProjectInfo" xml:space="preserve">
     <value>项目管理</value>
@@ -424,7 +424,7 @@
     <value>教师管理</value>
   </data>
   <data name="MenuKey.TitleInfo" xml:space="preserve">
-    <value>职位管理</value>
+    <value>职称管理</value>
   </data>
   <data name="MenuKey.UserManagement" xml:space="preserve">
     <value>用户管理</value>

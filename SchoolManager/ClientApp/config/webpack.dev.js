@@ -3,7 +3,7 @@ const merge = require("webpack-merge");
 const baseConfig = require("./webpack.base");
 const { utils } = require("./webpack-util");
 const HOST = "localhost";
-const PORT = 8051;
+const PORT = 80;
 
 module.exports = merge(baseConfig, {
   mode: "development",
@@ -15,20 +15,21 @@ module.exports = merge(baseConfig, {
     library: "[name]_[hash]",
     chunkFilename: "[name].bundle.js"
   },
-  devServer: {
-    host: HOST,
-    port: PORT,
-    open: true,
-    openPage: "index.html",
-    proxy: {
-      "/api": {
-        target: "http://localhost:7030/",
-        changeOrigin: true
-      },
-      "/_framework": {
-        target: "http://localhost:7030/",
-        changeOrigin: true
-      }
+    devServer: {
+        disableHostCheck: true,//是否检查host
+        host: HOST,
+        port: PORT,
+        open: true,
+        openPage: "index.html",
+        proxy: {
+          "/api": {
+            target: "http://localhost:7030/",
+            changeOrigin: true
+          },
+          "/_framework": {
+            target: "http://localhost:7030/",
+            changeOrigin: true
+          }
     }
   },
 
